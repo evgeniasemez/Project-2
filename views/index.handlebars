@@ -1,3 +1,53 @@
+{{!-- adding sing in and  sign up modals--}}
+<nav class="navbar navbar-light bg-light">
+  <div class="pull-right loginbutton">
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#loginModal" id="signInButton">Sign
+      In</button>
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#loginModal" id="signUpButton">Sign
+      Up</button>
+    <div id="helloName">
+      <a href="profile.html">
+        <h5 style="float:left;">Hello, <span id="helloUserName">User</span></h5>
+      </a>
+      <!-- <button type="button" class="btn btn-link" style="float:left;" id="signOut">Sign Out</button> -->
+      <a href="">
+        <h5 style="float:left;"> <span id="signOut">Sign Out</span></h5>
+      </a>
+    </div>
+    <!-- <i class="fas fa-moon" style="font-size: 50px; border:none !important;"></i> -->
+  </div>
+</nav>
+{{!-- adding sing in and  sign up modals--}}
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Welcome!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control email" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="Enter User's Name">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control password" id="exampleInputPassword1" placeholder="Password">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" id="submitButtonEmail">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div id="home">
   <div class="container">
     <div class="row">
@@ -7,11 +57,13 @@
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
             <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+            <input type="text" id="example-text" class="form-control" aria-describedby="example-text"
+              placeholder="Enter Example Text">
           </div>
           <div class="form-group">
             <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
+            <textarea class="form-control" id="example-description" aria-describedby="example-description"
+              placeholder="Enter Example Description"></textarea>
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
