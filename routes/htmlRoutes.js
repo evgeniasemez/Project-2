@@ -15,7 +15,7 @@ module.exports = function(app) {
   });
   // });
 
-  app.get("/profile", function(req, res) {
+  app.get("/loginscreen", function(req, res) {
     // console.log("Testing it!" + req.flash("info"));
 
     // db.Example.findAll({}).then(function(dbExamples) {
