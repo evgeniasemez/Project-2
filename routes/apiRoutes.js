@@ -1,4 +1,5 @@
 var db = require("../models");
+var passport = require("passport");
 
 module.exports = function(app) {
   // Get all examples
@@ -23,4 +24,28 @@ module.exports = function(app) {
       res.json(dbExample);
     });
   });
+  app.post(
+    "/login",
+    passport.authenticate("local", {
+      failureRedirect: "/",
+      successRedirect: "/",
+      failureFlash: true
+    }),
+    function(req, res) {
+      res.redirect("/");
+    }
+  );
+
+  app.get("/logout", function(req, res) {
+    req.logout();
+    res.redirect("/");
+  });
+
+  app.get(
+    "/profile",
+    require("connect-ensure-login").ensureLoggedIn(),
+    function(req, res) {
+      res.render("profile", { user: req.user });
+    }
+  );
 };
