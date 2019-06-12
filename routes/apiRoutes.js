@@ -3,27 +3,106 @@ var passport = require("passport");
 
 module.exports = function(app) {
   // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
-    });
+  app.get("/api/owners/:id", function(req, res) {
+    db.owners
+      .findOne({
+        where: {
+          include: [db.dogs],
+          id: req.params.id
+        }
+      })
+      .then(function(dbOwners) {
+        res.json(dbOwners);
+      });
   });
 
   // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  app.post("/api/owners", function(req, res) {
+    db.owners.create(req.body).then(function(dbOwner) {
+      res.json(dbOwner);
     });
   });
 
   // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({
-      where: { id: req.params.id }
-    }).then(function(dbExample) {
-      res.json(dbExample);
+  app.delete("/api/owners/:id", function(req, res) {
+    db.owners
+      .destroy({
+        where: { id: req.params.id }
+      })
+      .then(function(dbOwners) {
+        res.json(dbOwners);
+      });
+  });
+
+  app.get("/api/dogs/:id", function(req, res) {
+    db.dogs
+      .findOne({
+        where: {
+          include: [db.events],
+          id: req.params.id
+        }
+      })
+      .then(function(dbDogs) {
+        res.json(dbDogs);
+      });
+  });
+
+  // Create a new example
+  app.post("/api/dogs/", function(req, res) {
+    db.dogs.create(req.body).then(function(dbDogs) {
+      res.json(dbDogs);
     });
   });
+
+  // Delete an example by id
+  app.delete("/api/dogs/:id", function(req, res) {
+    db.dogs
+      .destroy({
+        where: { id: req.params.id }
+      })
+      .then(function(dogs) {
+        res.json(dogs);
+      });
+  });
+
+  app.get("/api/events", function(req, res) {
+    db.events.findAll({}).then(function(dbOwners) {
+      res.json(dbOwners);
+    });
+  });
+
+  app.get("/api/events/:id", function(req, res) {
+    db.events
+      .findOne({
+        where: {
+          include: [db.dogs],
+          id: req.params.id
+        }
+      })
+      .then(function(dbEvents) {
+        res.json(dbEvents);
+      });
+  });
+
+  // Create a new example
+  app.post("/api/events", function(req, res) {
+    console.log(req.body);
+    db.events.create(req.body).then(function(dbEvents) {
+      res.json(dbEvents);
+    });
+  });
+
+  // Delete an example by id
+  app.delete("/api/events/:id", function(req, res) {
+    db.events
+      .destroy({
+        where: { id: req.params.id }
+      })
+      .then(function(dbEvents) {
+        res.json(dbEvents);
+      });
+  });
+
   app.post(
     "/login",
     passport.authenticate("local", {
