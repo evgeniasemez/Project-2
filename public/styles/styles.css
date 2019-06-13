@@ -40,7 +40,7 @@
   height:80vh;
 }
 #homeImage{
-  background: url(./images/homeTry1.jpg) no-repeat center center fixed;
+  background: url(../images/homeTry1.jpg) no-repeat center center fixed;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -84,7 +84,7 @@
 }
 #footer{
   height:80vh;
-  background:url(./images/footerTry1.jpg) no-repeat center center fixed;
+  background:url(../images/footerTry1.jpg) no-repeat center center fixed;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
