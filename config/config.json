@@ -2,7 +2,8 @@
   "development": {
     "username": "root",
     "database": "sniffer_db",
-    "host": "localhost",
+    "password": "UWbootcamp20!",
+     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
