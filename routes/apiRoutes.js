@@ -43,9 +43,25 @@ module.exports = function(app) {
 
   app.get(
     "/profile",
-    require("connect-ensure-login").ensureLoggedIn(),
+    require("connect-ensure-login").ensureLoggedIn("loginscreen"),
     function(req, res) {
       res.render("profile", { user: req.user });
     }
   );
+
+  // setting sign up
+  app.post("/signup", function(req, res) {
+    console.log("Hello Evgenia: ", req.body);
+    db.owners
+      .create({
+        username: req.body.username,
+        password: req.body.password,
+        name: req.body.fullname,
+        phone: req.body.phonenumber,
+        email: req.body.email
+      })
+      .then(function(jane) {
+        console.log("Jane's auto-generated ID:", jane.id);
+      });
+  });
 };

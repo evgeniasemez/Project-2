@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 /*!
 FullCalendar Day Grid Plugin v4.2.0
 Docs & License: https://fullcalendar.io/
@@ -279,30 +280,31 @@ Docs & License: https://fullcalendar.io/
         timeText = this.getTimeText(eventRange);
         if (timeText) {
           timeHtml =
-            "<span class=\"fc-time\">" + core.htmlEscape(timeText) + "</span>";
+            // eslint-disable-next-line quotes
+            '<span class="fc-time">' + core.htmlEscape(timeText) + "</span>";
         }
       }
       titleHtml =
-        "<span class=\"fc-title\">" +
+        '<span class="fc-title">' +
         (core.htmlEscape(eventDef.title || "") || "&nbsp;") + // we always want one line of height
         "</span>";
       return (
-        "<a class=\"" +
+        '<a class="' +
         classes.join(" ") +
-        "\"" +
-        (eventDef.url ? " href=\"" + core.htmlEscape(eventDef.url) + "\"" : "") +
-        (skinCss ? " style=\"" + skinCss + "\"" : "") +
+        '"' +
+        (eventDef.url ? ' href="' + core.htmlEscape(eventDef.url) + '"' : "") +
+        (skinCss ? ' style="' + skinCss + '"' : "") +
         ">" +
-        "<div class=\"fc-content\">" +
+        '<div class="fc-content">' +
         (options.dir === "rtl"
           ? titleHtml + " " + timeHtml // put a natural space in between
           : timeHtml + " " + titleHtml) + //
         "</div>" +
         (isResizableFromStart
-          ? "<div class=\"fc-resizer fc-start-resizer\"></div>"
+          ? '<div class="fc-resizer fc-start-resizer"></div>'
           : "") +
         (isResizableFromEnd
-          ? "<div class=\"fc-resizer fc-end-resizer\"></div>"
+          ? '<div class="fc-resizer fc-end-resizer"></div>'
           : "") +
         "</a>"
       );
@@ -543,7 +545,7 @@ Docs & License: https://fullcalendar.io/
       // inject each new event skeleton into each associated row
       this.dayGrid.rowEls.forEach(function(rowNode, row) {
         var skeletonEl = core.htmlToElement(
-          "<div class=\"fc-mirror-skeleton\"><table></table></div>"
+          '<div class="fc-mirror-skeleton"><table></table></div>'
         ); // will be absolutely positioned
         var skeletonTopEl;
         var skeletonTop;
@@ -616,9 +618,9 @@ Docs & License: https://fullcalendar.io/
         className = type.toLowerCase();
       }
       skeletonEl = core.htmlToElement(
-        "<div class=\"fc-" +
+        '<div class="fc-' +
           className +
-          "-skeleton\">" +
+          '-skeleton">' +
           "<table><tr></tr></table>" +
           "</div>"
       );
@@ -709,20 +711,20 @@ Docs & License: https://fullcalendar.io/
         core.createFormatter(this.opt("dayPopoverFormat")) // TODO: cache
       );
       this.el.innerHTML =
-        "<div class=\"fc-header " +
+        '<div class="fc-header ' +
         theme.getClass("popoverHeader") +
-        "\">" +
-        "<span class=\"fc-title\">" +
+        '">' +
+        '<span class="fc-title">' +
         core.htmlEscape(title) +
         "</span>" +
-        "<span class=\"fc-close " +
+        '<span class="fc-close ' +
         theme.getIconClass("close") +
-        "\"></span>" +
+        '"></span>' +
         "</div>" +
-        "<div class=\"fc-body " +
+        '<div class="fc-body ' +
         theme.getClass("popoverContent") +
-        "\">" +
-        "<div class=\"fc-event-container\"></div>" +
+        '">' +
+        '<div class="fc-event-container"></div>' +
         "</div>";
       this.segContainerEl = this.el.querySelector(".fc-event-container");
     };
@@ -797,9 +799,9 @@ Docs & License: https://fullcalendar.io/
       }
       if (!props.cells.length) {
         parts.push(
-          "<td class=\"fc-day " +
+          '<td class="fc-day ' +
             this.context.theme.getClass("widgetContent") +
-            "\"></td>"
+            '"></td>'
         );
       }
       if (this.context.options.dir === "rtl") {
@@ -816,11 +818,11 @@ Docs & License: https://fullcalendar.io/
     var classes = core.getDayClasses(date, dateProfile, context);
     classes.unshift("fc-day", theme.getClass("widgetContent"));
     return (
-      "<td class=\"" +
+      '<td class="' +
       classes.join(" ") +
-      "\"" +
+      '"' +
       (isDateValid
-        ? " data-date=\"" + dateEnv.formatIso(date, { omitTime: true }) + "\""
+        ? ' data-date="' + dateEnv.formatIso(date, { omitTime: true }) + '"'
         : "") +
       (otherAttrs ? " " + otherAttrs : "") +
       "></td>"
@@ -982,13 +984,13 @@ Docs & License: https://fullcalendar.io/
       var bgRow = new DayBgRow(this.context);
       return (
         "" +
-        "<div class=\"" +
+        '<div class="' +
         classes.join(" ") +
-        "\">" +
-        "<div class=\"fc-bg\">" +
-        "<table class=\"" +
+        '">' +
+        '<div class="fc-bg">' +
+        '<table class="' +
         theme.getClass("tableGrid") +
-        "\">" +
+        '">' +
         bgRow.renderHtml({
           cells: this.props.cells[row],
           dateProfile: this.props.dateProfile,
@@ -996,7 +998,7 @@ Docs & License: https://fullcalendar.io/
         }) +
         "</table>" +
         "</div>" +
-        "<div class=\"fc-content-skeleton\">" +
+        '<div class="fc-content-skeleton">' +
         "<table>" +
         (this.getIsNumbersVisible()
           ? "<thead>" + this.renderNumberTrHtml(row) + "</thead>"
@@ -1066,11 +1068,11 @@ Docs & License: https://fullcalendar.io/
         weekCalcFirstDow = dateEnv.weekDow;
       }
       html +=
-        "<td class=\"" +
+        '<td class="' +
         classes.join(" ") +
-        "\"" +
+        '"' +
         (isDateValid
-          ? " data-date=\"" + dateEnv.formatIso(date, { omitTime: true }) + "\""
+          ? ' data-date="' + dateEnv.formatIso(date, { omitTime: true }) + '"'
           : "") +
         ">";
       if (
@@ -1517,9 +1519,9 @@ Docs & License: https://fullcalendar.io/
         if (_this.colWeekNumbersVisible) {
           return (
             "" +
-            "<th class=\"fc-week-number " +
+            '<th class="fc-week-number ' +
             theme.getClass("widgetHeader") +
-            "\" " +
+            '" ' +
             _this.weekNumberStyleAttr() +
             ">" +
             "<span>" + // needed for matchCellWidths
@@ -1539,7 +1541,7 @@ Docs & License: https://fullcalendar.io/
         if (_this.colWeekNumbersVisible) {
           return (
             "" +
-            "<td class=\"fc-week-number\" " +
+            '<td class="fc-week-number" ' +
             _this.weekNumberStyleAttr() +
             ">" +
             core.buildGotoAnchorHtml(
@@ -1558,9 +1560,9 @@ Docs & License: https://fullcalendar.io/
         var theme = _this.theme;
         if (_this.colWeekNumbersVisible) {
           return (
-            "<td class=\"fc-week-number " +
+            '<td class="fc-week-number ' +
             theme.getClass("widgetContent") +
-            "\" " +
+            '" ' +
             _this.weekNumberStyleAttr() +
             "></td>"
           );
@@ -1572,7 +1574,7 @@ Docs & License: https://fullcalendar.io/
       _this.renderDayGridIntroHtml = function() {
         if (_this.colWeekNumbersVisible) {
           return (
-            "<td class=\"fc-week-number\" " +
+            '<td class="fc-week-number" ' +
             _this.weekNumberStyleAttr() +
             "></td>"
           );
@@ -1625,23 +1627,23 @@ Docs & License: https://fullcalendar.io/
       var theme = this.theme;
       return (
         "" +
-        "<table class=\"" +
+        '<table class="' +
         theme.getClass("tableGrid") +
-        "\">" +
+        '">' +
         (this.opt("columnHeader")
-          ? "<thead class=\"fc-head\">" +
+          ? '<thead class="fc-head">' +
             "<tr>" +
-            "<td class=\"fc-head-container " +
+            '<td class="fc-head-container ' +
             theme.getClass("widgetHeader") +
-            "\">&nbsp;</td>" +
+            '">&nbsp;</td>' +
             "</tr>" +
             "</thead>"
           : "") +
-        "<tbody class=\"fc-body\">" +
+        '<tbody class="fc-body">' +
         "<tr>" +
-        "<td class=\"" +
+        '<td class="' +
         theme.getClass("widgetContent") +
-        "\"></td>" +
+        '"></td>' +
         "</tr>" +
         "</tbody>" +
         "</table>"
@@ -1650,7 +1652,7 @@ Docs & License: https://fullcalendar.io/
     // Generates an HTML attribute string for setting the width of the week number column, if it is known
     DayGridView.prototype.weekNumberStyleAttr = function() {
       if (this.weekNumberWidth != null) {
-        return "style=\"width:" + this.weekNumberWidth + "px\"";
+        return 'style="width:' + this.weekNumberWidth + 'px"';
       }
       return "";
     };
