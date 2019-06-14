@@ -1,6 +1,5 @@
 require("dotenv").config();
 var express = require("express");
-
 var exphbs = require("express-handlebars");
 var passport = require("passport");
 var Strategy = require("passport-local").Strategy;
@@ -39,7 +38,6 @@ passport.deserializeUser(function(id, cb) {
 // Initialize Passport and restore authentication state, if any, from the
 // session.
 
-
 var db = require("./models");
 
 var app = express();
@@ -65,14 +63,17 @@ app.use(
 // });
 
 // Middleware
-//Parse application body by JSON
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
-// Set Handlebars
-var exphbs = require("express-handlebars");
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// Handlebars
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main"
+  })
+);
 app.set("view engine", "handlebars");
 
 // Routes
