@@ -6,9 +6,25 @@ var db = require("./models");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-// Serve static content for the app from the "public" directory in the application directory.
-// app.use(express.static(path.join(__dirname, "public")));
+app.use(passport.initialize());
+app.use(passport.session());
 
+app.use(flash());
+app.use(require("cookie-parser")());
+app.use(require("body-parser").urlencoded({ extended: true }));
+app.use(
+  require("express-session")({
+    secret: "keyboard cat",
+    resave: false,
+    saveUninitialized: false
+  })
+);
+
+// app.get("/", function(req, res) {
+//   // Get an array of flash messages by passing the key to req.flash()
+//   res.render("index", { messages: req.flash("info") });
+// });
+s
 // Middleware
 //Parse application body by JSON
 app.use(express.urlencoded({ extended: false }));

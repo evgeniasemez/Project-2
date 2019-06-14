@@ -59,7 +59,8 @@
 }
 #user{
   height:80vh;
-  background-color:#D4F6F7;
+  /* background-color:#D4F6F7; */
+  background-color: #d8e4f1;
 }
 .user{
   position: relative;
