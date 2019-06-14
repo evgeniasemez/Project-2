@@ -1,6 +1,45 @@
 require("dotenv").config();
 var express = require("express");
 
+var exphbs = require("express-handlebars");
+var passport = require("passport");
+var Strategy = require("passport-local").Strategy;
+var flash = require("connect-flash");
+
+passport.use(
+  new Strategy(function(username, password, cb) {
+    // we don't have this yet
+    // db.users.findByUsername(username, function(err, user) {
+    // if (err) {
+    //   return cb(err);
+    // }
+    // if (!user) {
+    //   return cb(null, false);
+    // }
+    // if (user.password !== password) {
+    return cb(null, false, { message: "Incorrect password." });
+    // }
+    // return cb(null, user);
+    // });
+  })
+);
+passport.serializeUser(function(user, cb) {
+  cb(null, user.id);
+});
+
+passport.deserializeUser(function(id, cb) {
+  db.users.findById(id, function(err, user) {
+    if (err) {
+      return cb(err);
+    }
+    cb(null, user);
+  });
+});
+
+// Initialize Passport and restore authentication state, if any, from the
+// session.
+
+
 var db = require("./models");
 
 var app = express();
@@ -24,7 +63,7 @@ app.use(
 //   // Get an array of flash messages by passing the key to req.flash()
 //   res.render("index", { messages: req.flash("info") });
 // });
-s
+
 // Middleware
 //Parse application body by JSON
 app.use(express.urlencoded({ extended: false }));

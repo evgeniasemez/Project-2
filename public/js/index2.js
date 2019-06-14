@@ -80,7 +80,8 @@ $("#signUpForReal").on("click", function(event) {
     return;
   }
 
-  signup_API.Signup(
+
+  signupAPI.Signup(
     example.username,
     example.password,
     example.fullname,
@@ -94,7 +95,8 @@ $("#signUpForReal").on("click", function(event) {
   $email.val("");
 });
 
-var signup_API = {
+
+var signupAPI = {
   login: function(username, password) {
     return $.ajax({
       url: "/login",
