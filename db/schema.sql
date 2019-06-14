@@ -25,6 +25,7 @@ username varchar(255) not null,
 name varchar(255),
 phone int(11),
 email varchar(255),
+password varchar(255),
 primary key(id)
 )
 
