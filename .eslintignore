@@ -1,2 +1,5 @@
 models/index.js
 node_modules
+public/js/core.js
+public/js/daygrid.js
+public/js/interaction.js
