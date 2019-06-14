@@ -1,8 +1,14 @@
+// import { isString } from "util";
+
 // Get references to page elements
-var $submitBtn = $("#submitButtonEmail");
+// var $submitBtn = $("#submitButtonEmail");
 var $exampleList = $("#example-list");
-var $username = $("#exampleInputEmail1");
-var $password = $("#exampleInputPassword1");
+var $username = $("#username");
+var $password = $("#password");
+var $fullname = $("#fullname");
+var $phonenumber = $("#phonenumber");
+var $email = $("#email");
+var $validationtext = $("#validationText");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -33,6 +39,80 @@ var API = {
       url: "/login",
       type: "POST",
       data: { username: username, password: password }
+    });
+  }
+};
+
+$("#submitFirstSignUp").on("click", function() {
+  $("#submitFirstSignUp").hide();
+  $("#signUpForm").show();
+  $("#signUpForReal").show();
+  $("#submitSignIn").hide();
+});
+
+function phonenumber(phonenumber) {
+  var rightPhone = parseInt(phonenumber);
+  if (isNaN(rightPhone)) {
+    return "Please type digits";
+  } else {
+    return rightPhone;
+  }
+}
+// sign up functionality
+$("#signUpForReal").on("click", function(event) {
+  event.preventDefault();
+  var parsedPhoneNum = phonenumber($phonenumber.val().trim());
+  if (typeof parsedPhoneNum === "string" || parsedPhoneNum instanceof String) {
+    $validationtext.show();
+    return "Please type digits";
+  }
+
+  var example = {
+    username: $username.val().trim(),
+    password: $password.val().trim(),
+    fullname: $fullname.val().trim(),
+    phonenumber: parsedPhoneNum,
+    email: $email.val().trim()
+  };
+
+  if (!(example.username && example.password)) {
+    alert("You must enter a username and password!");
+    return;
+  }
+
+  signupAPI.Signup(
+    example.username,
+    example.password,
+    example.fullname,
+    example.phonenumber,
+    example.email
+  );
+  $username.val("");
+  $password.val("");
+  $fullname.val("");
+  $phonenumber.val("");
+  $email.val("");
+});
+
+var signupAPI = {
+  login: function(username, password) {
+    return $.ajax({
+      url: "/login",
+      type: "POST",
+      data: { username: username, password: password }
+    });
+  },
+  Signup: function(username, password, fullname, phonenumber, email) {
+    return $.ajax({
+      url: "/signup",
+      type: "POST",
+      data: {
+        username: username,
+        password: password,
+        fullname: fullname,
+        phonenumber: phonenumber,
+        email: email
+      }
     });
   }
 };

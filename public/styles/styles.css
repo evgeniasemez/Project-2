@@ -1,3 +1,123 @@
 .list-group-item {
   line-height: 2.5;
 }
+/**{
+    border-radius: 5px;
+    border: 1px solid blue
+}*/
+#jumbo{
+  height:20vh;
+  padding-top:0px;
+  padding-bottom:0px;
+  margin-bottom: 0rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  z-index: 4;
+  background-color: white;
+}
+#SLH{
+
+  position: relative;
+  top: -1vh;
+  left: 7vw;
+  height: 19vh;
+}
+#logo{
+
+  position: relative;
+  top: -1vh;
+  left: 7vw;
+  height: 19vh;
+}
+#logo{
+  position: relative;
+  top: -1vh;
+  left: 7vw;
+  height: 19vh;
+}
+.links{
+  position: relative;
+  top:-7vh; 
+  width:15vw;
+  height:4vh;
+  left:79.5vw;
+}
+.boneButton{
+  position: relative;
+}
+#home{
+  /*position: relative;
+  top:20vh;*/
+  margin-top:18vh;
+  height:80vh;
+}
+#homeImage{
+  background: url(../images/homeTry1.jpg) no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+#mission{
+  position: relative;
+  left: 10vw;
+  top: 30vh;
+  z-index:3;
+  background-color: #F6F7F8;
+  height:35vh;
+  width:35vw;
+}
+#user{
+  height:80vh;
+  /* background-color:#D4F6F7; */
+  background-color: #d8e4f1;
+}
+.user{
+  position: relative;
+  background-image: "./images/backgroundColor_Profile.jpg";
+  /*background-color: #B3CDCE;*/
+  height:60vh;
+  width: 50vw;
+  top:10vh;
+  left:10vw;
+}
+.cuteDog{
+  position: relative;
+  top:20vh;
+  left:17vw;
+  height:40vh;
+}
+#calendar{
+  height:122vh;
+  background-color: white;
+  max-width: 900px;
+  margin: 0 auto;
+}
+#footer{
+  height:80vh;
+  background:url(../images/footerTry1.jpg) no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+.developer{
+  position: relative;
+  top: 5vh;
+  width:20vw;
+  height: 56vh;
+  margin-left: 4vw;
+}
+.developerImage{
+  position: relative;
+  left:3.5vw;
+  width:12vw;
+  height:18vh;
+}
+.developerBtn{
+  border-radius: 5px;
+}
