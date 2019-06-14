@@ -17,6 +17,12 @@
   z-index: 4;
   background-color: white;
 }
+#SLH{
+  position: relative;
+  top: -1vh;
+  left: 7vw;
+  height: 19vh;
+}
 #logo{
   position: relative;
   top: -1vh;
