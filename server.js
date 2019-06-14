@@ -16,6 +16,7 @@ passport.use(
     //   return cb(null, false);
     // }
     // if (user.password !== password) {
+
     return cb(null, false, { message: "Incorrect password." });
     // }
     // return cb(null, user);
