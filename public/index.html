@@ -2,25 +2,24 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Sniffer</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link href="./styles/core.css" rel="stylesheet" />
-    <link href="./styles/daygrid.css" rel="stylesheet" />
-    <script src="./js/core.js"></script>
-    <script src="./js/interaction.js"></script>
-    <script src="./js/daygrid.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Sniffer</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="./styles/core.css" rel="stylesheet" />
+  <link href="./styles/daygrid.css" rel="stylesheet" />
+  <script src="./js/core.js"></script>
+  <script src="./js/interaction.js"></script>
+  <link href="./styles/daygrid.css" rel="stylesheet" />  
+  <link href="https://fonts.googleapis.com/css?family=Quantico" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+  <script>
 
-    <link href="https://fonts.googleapis.com/css?family=Quantico" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./styles/styles.css">
-    <script>
 
         document.addEventListener('DOMContentLoaded', function() {
           var calendarEl = document.getElementById('calendar');
@@ -95,28 +94,25 @@
 </head>
 
 <body>
-
-    <!--header for the page-->
-    <div class="jumbotron" style="
-    background-color: #f1f1f1;
-" id="jumbo">
-        <img title="Santos L Halper" id="SLH" class="image" src="images/sniffer.png" alt="Santos L Helper">
-        <button id="submitFromHomePage" style="
-        margin-top: 10px;" class="btn btn-primary float-right">Sign In</button>
-        <div class="links">
-            <a href=#user>Your Info</a>
-            <a href=#calendar>Calendar</a>
-            <a href=#footer>Team</a>
-        </div>
+  <!--header for the page-->
+  <div class="jumbotron" id="jumbo">
+    <img title="Santos L Halper" id="SLH" class="image" src="images/sniffer.png" alt="Santos L Helper">
+    <button id="submitFromHomePage" style="margin-top: 10px;" class="btn btn-primary float-right">Sign In</button>
+    <div class="links">
+      <a href=#user>Your Info</a>
+      <a href=#calendar>Calendar</a>
+      <a href=#footer>Team</a>
     </div>
 
-    <div class="row" id="home">
-        <div id="homeImage">
-            <div id="mission" style="
-            background-color: #f1f1f1;">
-                Dogs are basically social animals that enjoy the company of their peers. Socialized dogs don’t get stressed when car horns honk, strange dogs bark, bicycles buzz by or crowds of people cruise past them. Sociable dogs live happy, care-free lives, so how can you help your dog become better socialized? Check this website out! Dogs, like people, need to practice their social skills. Spending time with other dogs will help your dog hone his ability to read his friends’ body language and to communicate effectively. This website can help you with that!
-            </div>
-        </div>
+  <div class="row" id="home">
+    <div id="homeImage">
+      <div id="mission" style="background-color: #f1f1f1;">
+        Dogs are basically social animals that enjoy the company of their peers. Socialized dogs don’t get stressed when
+        car horns honk, strange dogs bark, bicycles buzz by or crowds of people cruise past them. Sociable dogs live
+        happy, care-free lives, so how can you help your dog become better socialized? Check this website out! Dogs,
+        like people, need to practice their social skills. Spending time with other dogs will help your dog hone his
+        ability to read his friends’ body language and to communicate effectively. This website can help you with that!
+      </div>
     </div>
 
     <div class="row" id="user">
@@ -137,64 +133,28 @@
     <div class="row" id="calendar">
 
     </div>
-    <div class="row" id="footer">
-        <div class="card developer">
-            <div class="card-body developerBody">
-                <h5 class="card-title">Evgenia Semez</h5>
-                <p class="card-text">I am a loving pet and make my human happy all the time! I have a much bigger heart than you can imaging!</p>
-                <!--<a class="links" href="https://www.linkedin.com/in/greg-lanter-02202a34"><i class="fab fa-linkedin"></i>-->
-                <a href="https://github.com/evgeniasemez/Project-2" class="btn btn-primary developerBtn"
-                    target="_blank"><i class="fab fa-github"></i> Git Hub</a>
-                <a href="https://linkedin.com/in/evgenia-semez-955bb074" class="btn btn-primary developerBtn"
-                    target="_blank"><i class="fab fa-linkedin"></i> Linked In</a>
-            </div>
-            <img title="Evgenia Pet" class="image developerImage" src="./images/evgeniaPet.jpg" alt="Evgenia's Pet">
+      <div class="card developer">
+        <div class="card-body">
+          <h5 class="card-title">Greg Lanter</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+            card's content.</p>
+          <!--<a class="links" href="https://www.linkedin.com/in/greg-lanter-02202a34"><i class="fab fa-linkedin"></i>-->
+          <a href="https://github.com/GregoryLanter" class="btn btn-primary developerBtn" target="_blank"><i
+              class="fab fa-github"></i> Git Hub</a>
+          <a href="https://www.linkedin.com/in/greg-lanter-02202a34" class="btn btn-primary developerBtn"
+            target="_blank"><i class="fab fa-linkedin"></i> Linked In</a>
         </div>
-        <div class="card developer">
-            <div class="card-body">
-                <h5 class="card-title">Nathan Meyer</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <!--<a class="links" href="https://www.linkedin.com/in/greg-lanter-02202a34"><i class="fab fa-linkedin"></i>-->
-                <a href="https://github.com/GregoryLanter" class="btn btn-primary developerBtn" target="_blank"><i
-                        class="fab fa-github"></i> Git Hub</a>
-                <a href="https://www.linkedin.com/in/greg-lanter-02202a34" class="btn btn-primary developerBtn"
-                    target="_blank"><i class="fab fa-linkedin"></i> Linked In</a>
-            </div>
-            <img title="Nathan Pet" class="image developerImage" src="./images/nathanPet.png" alt="Nathan's Pets">
-        </div>
-        <div class="card developer">
-            <div class="card-body">
-                <h5 class="card-title">Alex Poplawski</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <!--<a class="links" href="https://www.linkedin.com/in/greg-lanter-02202a34"><i class="fab fa-linkedin"></i>-->
-                <a href="https://github.com/GregoryLanter" class="btn btn-primary developerBtn" target="_blank"><i
-                        class="fab fa-github"></i> Git Hub</a>
-                <a href="https://www.linkedin.com/in/greg-lanter-02202a34" class="btn btn-primary developerBtn"
-                    target="_blank"><i class="fab fa-linkedin"></i> Linked In</a>
-            </div>
-            <img title="Alex Pet" class="image developerImage" src="./images/alexPets.jpg" alt="Alex's Pets">
-        </div>
-        <div class="card developer">
-            <div class="card-body">
-                <h5 class="card-title">Greg Lanter</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <!--<a class="links" href="https://www.linkedin.com/in/greg-lanter-02202a34"><i class="fab fa-linkedin"></i>-->
-                <a href="https://github.com/GregoryLanter" class="btn btn-primary developerBtn" target="_blank"><i
-                        class="fab fa-github"></i> Git Hub</a>
-                <a href="https://www.linkedin.com/in/greg-lanter-02202a34" class="btn btn-primary developerBtn"
-                    target="_blank"><i class="fab fa-linkedin"></i> Linked In</a>
-            </div>
-            <img title="Greg Pet" class="image developerImage" src="./images/gregPet.jpg" alt="Greg's Pets">
-        </div>
+        <img title="Greg Pet" class="image developerImage" src="./images/gregPet.jpg" alt="Greg's Pets">
+      </div>
     </div>
 </body>
 <script>
-  $("#submitFromHomePage").on("click",function(){
+  $("#submitFromHomePage").on("click", function () {
     window.location.href = "/loginscreen";
   });
 </script>
+<script src="./js/core.js"></script>
+<script src="./js/interaction.js"></script>
+<script src="./js/daygrid.js"></script>
 
 </html>
