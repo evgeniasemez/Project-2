@@ -1,5 +1,6 @@
 var db = require("../models");
 var passport = require("passport");
+var sha256 = require("js-sha256");
 
 module.exports = function(app) {
   // Get all examples
@@ -50,12 +51,15 @@ module.exports = function(app) {
   );
 
   // setting sign up
+  // eslint-disable-next-line no-unused-vars
   app.post("/signup", function(req, res) {
     console.log("Hello Evgenia: ", req.body);
+    var pass = sha256(req.body.password);
+    console.log(pass);
     db.owners
       .create({
         username: req.body.username,
-        password: req.body.password,
+        password: pass,
         name: req.body.fullname,
         phone: req.body.phonenumber,
         email: req.body.email
