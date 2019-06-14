@@ -8,88 +8,89 @@
   <title>Sniffer</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link href="./styles/core.css" rel="stylesheet" />
   <link href="./styles/daygrid.css" rel="stylesheet" />
   <script src="./js/core.js"></script>
   <script src="./js/interaction.js"></script>
-  <script src="./js/daygrid.js"></script>
-
+  <link href="./styles/daygrid.css" rel="stylesheet" />  
   <link href="https://fonts.googleapis.com/css?family=Quantico" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./styles/styles.css">
   <script>
 
-    document.addEventListener('DOMContentLoaded', function () {
-      var calendarEl = document.getElementById('calendar');
 
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        plugins: ['interaction', 'dayGrid'],
-        defaultDate: '2019-06-12',
-        editable: true,
-        eventLimit: true, // allow "more" link when too many events
-        events: [
-          {
-            title: 'All Day Event',
-            start: '2019-06-01'
-          },
-          {
-            title: 'Long Event',
-            start: '2019-06-07',
-            end: '2019-06-10'
-          },
-          {
-            groupId: 999,
-            title: 'Repeating Event',
-            start: '2019-06-09T16:00:00'
-          },
-          {
-            groupId: 999,
-            title: 'Repeating Event',
-            start: '2019-06-16T16:00:00'
-          },
-          {
-            title: 'Conference',
-            start: '2019-06-11',
-            end: '2019-06-13'
-          },
-          {
-            title: 'Meeting',
-            start: '2019-06-12T10:30:00',
-            end: '2019-06-12T12:30:00'
-          },
-          {
-            title: 'Lunch',
-            start: '2019-06-12T12:00:00'
-          },
-          {
-            title: 'Meeting',
-            start: '2019-06-12T14:30:00'
-          },
-          {
-            title: 'Happy Hour',
-            start: '2019-06-12T17:30:00'
-          },
-          {
-            title: 'Dinner',
-            start: '2019-06-12T20:00:00'
-          },
-          {
-            title: 'Birthday Party',
-            start: '2019-06-13T07:00:00'
-          },
-          {
-            title: 'Click for Google',
-            url: 'http://google.com/',
-            start: '2019-06-28'
-          }
-        ]
-      });
-
-      calendar.render();
-    });
-
-  </script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var calendarEl = document.getElementById('calendar');
+      
+          var calendar = new FullCalendar.Calendar(calendarEl, {
+            plugins: [ 'interaction', 'dayGrid' ],
+            defaultDate: '2019-06-12',
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events
+            events: [
+              {
+                title: 'All Day Event',
+                start: '2019-06-01'
+              },
+              {
+                title: 'Long Event',
+                start: '2019-06-07',
+                end: '2019-06-10'
+              },
+              {
+                groupId: 999,
+                title: 'Repeating Event',
+                start: '2019-06-09T16:00:00'
+              },
+              {
+                groupId: 999,
+                title: 'Repeating Event',
+                start: '2019-06-16T16:00:00'
+              },
+              {
+                title: 'Conference',
+                start: '2019-06-11',
+                end: '2019-06-13'
+              },
+              {
+                title: 'Meeting',
+                start: '2019-06-12T10:30:00',
+                end: '2019-06-12T12:30:00'
+              },
+              {
+                title: 'Lunch',
+                start: '2019-06-12T12:00:00'
+              },
+              {
+                title: 'Meeting',
+                start: '2019-06-12T14:30:00'
+              },
+              {
+                title: 'Happy Hour',
+                start: '2019-06-12T17:30:00'
+              },
+              {
+                title: 'Dinner',
+                start: '2019-06-12T20:00:00'
+              },
+              {
+                title: 'Birthday Party',
+                start: '2019-06-13T07:00:00'
+              },
+              {
+                title: 'Click for Google',
+                url: 'http://google.com/',
+                start: '2019-06-28'
+              }
+            ]
+          });
+      
+          calendar.render();
+        });
+      
+      </script>
 </head>
 
 <body>
@@ -101,11 +102,13 @@
     <img title="Santos L Halper" id="logo" class="image" src="images/sniffer.png" alt="Santos L Helper">
     <button id="submitFromHomePage" style="
         margin-top: 10px;" class="btn btn-primary float-right">Sign In</button>
+
     <div class="links">
       <a href=#user>Your Info</a>
       <a href=#calendar>Calendar</a>
       <a href=#footer>Team</a>
     </div>
+
   </div>
   </div>
 
@@ -113,11 +116,13 @@
     <div id="homeImage">
       <div id="mission" style="
             background-color: #f1f1f1;">
+
         Dogs are basically social animals that enjoy the company of their peers. Socialized dogs don’t get stressed when
         car horns honk, strange dogs bark, bicycles buzz by or crowds of people cruise past them. Sociable dogs live
         happy, care-free lives, so how can you help your dog become better socialized? Check this website out! Dogs,
         like people, need to practice their social skills. Spending time with other dogs will help your dog hone his
         ability to read his friends’ body language and to communicate effectively. This website can help you with that!
+
       </div>
     </div>
   </div>
@@ -133,17 +138,26 @@
       </ul>
       <div class="container userButtonContainer">
         <button type="button" class="btn btn-primary addDog">Update</button>
+
       </div>
     </div>
-    <img title="cute_dog3" class="image cuteDog" src="./images/cute-dogs3.jpg" alt="Cute Dog">
-  </div>
 
-  <div class="row" id="calendar">
+    <div class="row" id="user">
 
-  </div>
-  <div class="row" id="map">
-  </div>
+        <div class="card user">
+            <div class="card-header">
+                <h3>Owner Name</h3>
+            </div>
+            <ul>
+                <li>Mumford Brittany Mix</li>
+                <li>Magic Lab Mix</li>
+            </ul>
+            <img title="boneEdit" class="image boneButton" src="./images/thickbone.png" alt="Bone shaped Button Edit">
+        </div>
+        <img title="cute_dog3" class="image cuteDog" src="./images/cute-dogs3.jpg" alt="Cute Dog">
+    </div>
 
+    <div class="row" id="calendar">
 
   <div class="row" id="footer">
 
@@ -201,11 +215,15 @@
     </div>
   </div>
   </div>
+
 </body>
 <script>
   $("#submitFromHomePage").on("click", function () {
     window.location.href = "/loginscreen";
   });
 </script>
+<script src="./js/core.js"></script>
+<script src="./js/interaction.js"></script>
+<script src="./js/daygrid.js"></script>
 
 </html>
