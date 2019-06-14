@@ -2,94 +2,96 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Sniffer</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link href="./styles/core.css" rel="stylesheet" />
-  <link href="./styles/daygrid.css" rel="stylesheet" />
-  <script src="./js/core.js"></script>
-  <script src="./js/interaction.js"></script>
-  <script src="./js/daygrid.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sniffer</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="./styles/core.css" rel="stylesheet" />
+    <link href="./styles/daygrid.css" rel="stylesheet" />
+    <script src="./js/core.js"></script>
+    <script src="./js/interaction.js"></script>
+    <script src="./js/daygrid.js"></script>
 
-  <link href="https://fonts.googleapis.com/css?family=Quantico" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="./styles/styles.css">
-  <script>
+    <link href="https://fonts.googleapis.com/css?family=Quantico" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+    <script>
 
-    document.addEventListener('DOMContentLoaded', function () {
-      var calendarEl = document.getElementById('calendar');
-
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        plugins: ['interaction', 'dayGrid'],
-        defaultDate: '2019-06-12',
-        editable: true,
-        eventLimit: true, // allow "more" link when too many events
-        events: [
-          {
-            title: 'All Day Event',
-            start: '2019-06-01'
-          },
-          {
-            title: 'Long Event',
-            start: '2019-06-07',
-            end: '2019-06-10'
-          },
-          {
-            groupId: 999,
-            title: 'Repeating Event',
-            start: '2019-06-09T16:00:00'
-          },
-          {
-            groupId: 999,
-            title: 'Repeating Event',
-            start: '2019-06-16T16:00:00'
-          },
-          {
-            title: 'Conference',
-            start: '2019-06-11',
-            end: '2019-06-13'
-          },
-          {
-            title: 'Meeting',
-            start: '2019-06-12T10:30:00',
-            end: '2019-06-12T12:30:00'
-          },
-          {
-            title: 'Lunch',
-            start: '2019-06-12T12:00:00'
-          },
-          {
-            title: 'Meeting',
-            start: '2019-06-12T14:30:00'
-          },
-          {
-            title: 'Happy Hour',
-            start: '2019-06-12T17:30:00'
-          },
-          {
-            title: 'Dinner',
-            start: '2019-06-12T20:00:00'
-          },
-          {
-            title: 'Birthday Party',
-            start: '2019-06-13T07:00:00'
-          },
-          {
-            title: 'Click for Google',
-            url: 'http://google.com/',
-            start: '2019-06-28'
-          }
-        ]
-      });
-
-      calendar.render();
-    });
-
-  </script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var calendarEl = document.getElementById('calendar');
+      
+          var calendar = new FullCalendar.Calendar(calendarEl, {
+            plugins: [ 'interaction', 'dayGrid' ],
+            defaultDate: '2019-06-12',
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events
+            events: [
+              {
+                title: 'All Day Event',
+                start: '2019-06-01'
+              },
+              {
+                title: 'Long Event',
+                start: '2019-06-07',
+                end: '2019-06-10'
+              },
+              {
+                groupId: 999,
+                title: 'Repeating Event',
+                start: '2019-06-09T16:00:00'
+              },
+              {
+                groupId: 999,
+                title: 'Repeating Event',
+                start: '2019-06-16T16:00:00'
+              },
+              {
+                title: 'Conference',
+                start: '2019-06-11',
+                end: '2019-06-13'
+              },
+              {
+                title: 'Meeting',
+                start: '2019-06-12T10:30:00',
+                end: '2019-06-12T12:30:00'
+              },
+              {
+                title: 'Lunch',
+                start: '2019-06-12T12:00:00'
+              },
+              {
+                title: 'Meeting',
+                start: '2019-06-12T14:30:00'
+              },
+              {
+                title: 'Happy Hour',
+                start: '2019-06-12T17:30:00'
+              },
+              {
+                title: 'Dinner',
+                start: '2019-06-12T20:00:00'
+              },
+              {
+                title: 'Birthday Party',
+                start: '2019-06-13T07:00:00'
+              },
+              {
+                title: 'Click for Google',
+                url: 'http://google.com/',
+                start: '2019-06-28'
+              }
+            ]
+          });
+      
+          calendar.render();
+        });
+      
+      </script>
 </head>
 
 <body>
@@ -107,7 +109,6 @@
             <a href=#footer>Team</a>
         </div>
     </div>
-  </div>
 
     <div class="row" id="home">
         <div id="homeImage">
@@ -117,69 +118,24 @@
             </div>
         </div>
     </div>
-  </div>
 
-  <div class="row" id="user">
-    <div class="card user">
-      <div class="card-header">
-        <h3>{{Owner Name}}</h3>
-      </div>
-      <ul>
-        <li>{{Dog}} - {{Breed}}</li>
-      </ul>
-      <div class="container userButtonContainer">
-        <button type="button" class="btn btn-primary addDog">Update</button>
-      </div>
+    <div class="row" id="user">
+
+        <div class="card user">
+            <div class="card-header">
+                <h3>Owner Name</h3>
+            </div>
+            <ul>
+                <li>Mumford Brittany Mix</li>
+                <li>Magic Lab Mix</li>
+            </ul>
+            <img title="boneEdit" class="image boneButton" src="./images/thickbone.png" alt="Bone shaped Button Edit">
+        </div>
+        <img title="cute_dog3" class="image cuteDog" src="./images/cute-dogs3.jpg" alt="Cute Dog">
     </div>
-    <img title="cute_dog3" class="image cuteDog" src="./images/cute-dogs3.jpg" alt="Cute Dog">
-  </div>
 
-  <div class="row" id="calendar">
+    <div class="row" id="calendar">
 
-  </div>
-  <div class="row" id="map">
-  </div>
-
-
-  <div class="row" id="footer">
-    <div class="card developer">
-      <div class="card-body developerBody">
-        <h5 class="card-title">Evgenia Semez</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-          card's content.</p>
-        <!--<a class="links" href="https://www.linkedin.com/in/greg-lanter-02202a34"><i class="fab fa-linkedin"></i>-->
-        <a href="https://github.com/evgeniasemez/Project-2" class="btn btn-primary developerBtn" target="_blank"><i
-            class="fab fa-github"></i> Git Hub</a>
-        <a href="https://linkedin.com/in/evgenia-semez-955bb074" class="btn btn-primary developerBtn" target="_blank"><i
-            class="fab fa-linkedin"></i> Linked In</a>
-      </div>
-      <img title="Evgenia Pet" class="image developerImage" src="./images/evgeniaPet.jpg" alt="Evgenia's Pet">
-    </div>
-    <div class="card developer">
-      <div class="card-body">
-        <h5 class="card-title">Nathan Meyer</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-          card's content.</p>
-        <!--<a class="links" href="https://www.linkedin.com/in/greg-lanter-02202a34"><i class="fab fa-linkedin"></i>-->
-        <a href="https://github.com/GregoryLanter" class="btn btn-primary developerBtn" target="_blank"><i
-            class="fab fa-github"></i> Git Hub</a>
-        <a href="https://www.linkedin.com/in/greg-lanter-02202a34" class="btn btn-primary developerBtn"
-          target="_blank"><i class="fab fa-linkedin"></i> Linked In</a>
-      </div>
-      <img title="Nathan Pet" class="image developerImage" src="./images/nathanPet.png" alt="Nathan's Pets">
-    </div>
-    <div class="card developer">
-      <div class="card-body">
-        <h5 class="card-title">Alex Poplawski</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-          card's content.</p>
-        <!--<a class="links" href="https://www.linkedin.com/in/greg-lanter-02202a34"><i class="fab fa-linkedin"></i>-->
-        <a href="https://github.com/GregoryLanter" class="btn btn-primary developerBtn" target="_blank"><i
-            class="fab fa-github"></i> Git Hub</a>
-        <a href="https://www.linkedin.com/in/greg-lanter-02202a34" class="btn btn-primary developerBtn"
-          target="_blank"><i class="fab fa-linkedin"></i> Linked In</a>
-      </div>
-      <img title="Alex Pet" class="image developerImage" src="./images/alexPets.jpg" alt="Alex's Pets">
     </div>
     <div class="row" id="footer">
         <div class="card developer">
@@ -234,7 +190,6 @@
             <img title="Greg Pet" class="image developerImage" src="./images/gregPet.jpg" alt="Greg's Pets">
         </div>
     </div>
-  </div>
 </body>
 <script>
   $("#submitFromHomePage").on("click",function(){
