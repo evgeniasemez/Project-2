@@ -4,7 +4,7 @@
 /**{
     border-radius: 5px;
     border: 1px solid blue
-} */
+}*/
 #jumbo{
   height:20vh;
   padding-top:0px;
@@ -18,12 +18,14 @@
   background-color: white;
 }
 #SLH{
+
   position: relative;
   top: -1vh;
   left: 7vw;
   height: 19vh;
 }
 #logo{
+
   position: relative;
   top: -1vh;
   left: 7vw;
@@ -39,12 +41,11 @@
 .boneButton{
   position: relative;
 }
-#home, #dogInfo{
+#home{
   /*position: relative;
   top:20vh;*/
   margin-top:18vh;
   height:80vh;
-  width: 100vw;
 }
 #homeImage{
   background: url(../images/homeTry1.jpg) no-repeat center center fixed;
@@ -78,10 +79,6 @@
   top:10vh;
   left:10vw;
 }
-.userButtonContainer{
-  position: relative;
-  top:30vh;
-}
 .cuteDog{
   position: relative;
   top:20vh;
@@ -90,20 +87,12 @@
 }
 #calendar{
   height:122vh;
-  width: 100vw;
   background-color: white;
   max-width: 900px;
   margin: 0 auto;
 }
-#map{
-  height:80vh;
-  width: 100vw;
-  background-color:#D4F6F7;
-}
-
 #footer{
   height:80vh;
-  width: 100vw;
   background:url(../images/footerTry1.jpg) no-repeat center center fixed;
   background-size: cover;
   -webkit-background-size: cover;
@@ -125,40 +114,4 @@
 }
 .developerBtn{
   border-radius: 5px;
-}
-.dogList{
-  position: relative;
-  top:9vh;
-  left:11vw;
-  height:50vh;
-  width:48vw;
-}
-.cuteDog5{
-  position: relative;
-  top:9vh;
-  height:40vh;
-}
-#dogInfo{
-  background: url(../images/dogData.jpg) no-repeat center center fixed;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  height:80vh;
-  width:100vw;
-}
-.dogButtonContainer{
-  width:5vw;
-  margin-right: 2.5vw;    
-  float:right;
-}
-.cuteDog4{
-  position: relative;
-  top:9vh;
-  height:40vh;
-  width:27vw;
-}
-#datepicker{
-  width:100px;
-  height:100px;
 }
