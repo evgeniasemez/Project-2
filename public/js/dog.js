@@ -93,4 +93,3 @@ function handleDogDeleteButtonPress() {
     .then(getDogs);
 }
 };
-

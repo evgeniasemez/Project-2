@@ -1,4 +1,6 @@
 var db = require("../models");
+var passport = require("passport");
+var sha256 = require("js-sha256");
 
 module.exports = function(app) {
   // Get all examples
@@ -59,20 +61,47 @@ module.exports = function(app) {
       res.json(dbExample);
     });
   });
+  app.post(
+    "/login",
+    passport.authenticate("local", {
+      failureRedirect: "/",
+      successRedirect: "/",
+      failureFlash: true
+    }),
+    function(req, res) {
+      res.redirect("/");
+    }
+  );
 
-  app.delete("/api/events/:id", function(req, res) {
-    db.Example.destory({
-      where: { id: req.params.id }
-    }).then(function(dbExample) {
-      res.json(dbExample);
-    });
+  app.get("/logout", function(req, res) {
+    req.logout();
+    res.redirect("/");
   });
 
-  app.delete("/api/owners/:id", function(req, res) {
-    db.Example.destory({
-      where: { id: req.params.id }
-    }).then(function(dbExample) {
-      res.json(dbExample);
-    });
+  app.get(
+    "/profile",
+    require("connect-ensure-login").ensureLoggedIn("loginscreen"),
+    function(req, res) {
+      res.render("profile", { user: req.user });
+    }
+  );
+
+  // setting sign up
+  // eslint-disable-next-line no-unused-vars
+  app.post("/signup", function(req, res) {
+    console.log("Hello Evgenia: ", req.body);
+    var pass = sha256(req.body.password);
+    console.log(pass);
+    db.owners
+      .create({
+        username: req.body.username,
+        password: pass,
+        name: req.body.fullname,
+        phone: req.body.phonenumber,
+        email: req.body.email
+      })
+      .then(function(jane) {
+        console.log("Jane's auto-generated ID:", jane.id);
+      });
   });
 };
