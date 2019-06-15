@@ -38,11 +38,12 @@
   height: 19vh;
 }
 .links{
-  position: relative;
-  top:-7vh; 
-  width:15vw;
-  height:4vh;
-  left:79.5vw;
+  position: absolute;
+  top: 5vh; 
+  /* width:15vw; */
+  /* height:4vh; */
+  /* left:79.5vw; */
+  right: 41px;
 }
 .boneButton{
   position: relative;
@@ -65,10 +66,10 @@
 #mission{
   position: relative;
   left: 10vw;
-  top: 30vh;
+  top: 16vh;
   z-index:3;
   background-color: #F6F7F8;
-  height:35vh;
+  /* height:45vh; */
   width:35vw;
 }
 #user{
