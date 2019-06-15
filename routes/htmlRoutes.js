@@ -50,7 +50,19 @@ module.exports = function(app) {
       });
     });
   });
-
+  app.get("/loadDogData", function(req, res) {
+    /*console.log("req - " + req);
+    console.log("res - " + res);*/
+    db.dogs
+      .findAll({
+        attributes: ["name", "breed"] /*,
+        where: { owner: 1 }*/
+      })
+      .then(function(data) {
+        console.log(data);
+        res.render("doginfo", data);
+      });
+  });
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");

@@ -1,0 +1,41 @@
+    <!--header for the page-->
+    <div class="jumbotron" id="jumbo">
+        <img title="Santos L Halper" id="logo" class="image" src="images/sniffer.png" alt="Santos L Helper">
+    </div>
+    <div class="row" id="dogInfo">
+        <div class="col-lg-8">
+            <div class="card dogList">
+                <div class="card-header">
+                    <h3>Dogs</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <ul>
+                            {{#each dog}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                    <div class="col-md-8" id="dogData">
+                        <form>
+                            <!--get the name-->
+                            <div class="form-group">
+                                <label for="name-input">Dog Name</label>
+                                <input type="text" class="form-control" id="name-input" placeholder="Enter dog name" />
+                            </div>
+                            <!--get the Breed-->
+                            <div class="form-group">
+                                <label for="destination-input">Breed</label>
+                                <input type="text" class="form-control" id="breed-input" placeholder="Enter Breed" />
+                            </div>
+                            <div class="container dogButtonContainer">
+                                <button type="button" class="btn btn-primary addDog">Update</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <img title="cute_dog5" class="image cuteDog5" src="./images/cute-dogs5.jpg" alt="Cute Dog">
+            </div>
+        </div>
+    </div>
