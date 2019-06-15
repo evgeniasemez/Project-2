@@ -1,7 +1,7 @@
 // import { isString } from "util";
 
 // Get references to page elements
-// var $submitBtn = $("#submitButtonEmail");
+var $submitBtn = $("#submitSignIn");
 var $exampleList = $("#example-list");
 var $username = $("#username");
 var $password = $("#password");
@@ -161,7 +161,9 @@ var handleFormSubmit = function(event) {
     return;
   }
 
-  API.login(example.username, example.password);
+  API.login(example.username, example.password).then(function(res) {
+    window.location.replace("/");
+  });
   $username.val("");
   $password.val("");
 };
