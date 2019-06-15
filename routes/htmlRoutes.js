@@ -16,11 +16,7 @@ module.exports = function(app) {
     // console.log("Testing it!" + req.flash("info"));
     if (req.user) {
       console.log("do nothing");
-      res.render("index", {
-        user: req.user
-        // examples: dbExamples,
-        // flash: req.flash("error"),
-      });
+      res.redirect("/users/" + req.user.username);
     } else {
       // db.Example.findAll({}).then(function(dbExamples) {
       res.render("profile", {

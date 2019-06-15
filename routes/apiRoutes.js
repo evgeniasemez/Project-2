@@ -108,12 +108,12 @@ module.exports = function(app) {
     "/login",
     passport.authenticate("local", {
       failureRedirect: "/",
-      successRedirect: "/"
+      successRedirect: "/owner"
     }),
     function(req, res) {
       console.log("HI");
 
-      res.redirect("/profile");
+      res.redirect("/owner");
     }
   );
 
@@ -123,10 +123,10 @@ module.exports = function(app) {
   });
 
   app.get(
-    "/profile",
+    "/owner",
     require("connect-ensure-login").ensureLoggedIn("loginscreen"),
     function(req, res) {
-      res.render("profile", { user: req.user });
+      res.render("owner", { user: req.user });
     }
   );
 
