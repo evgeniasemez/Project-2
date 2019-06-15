@@ -39,11 +39,11 @@ module.exports = function(app) {
     db.dogs
       .findOne({
         where: {
-          include: [db.events],
           id: req.params.id
         }
       })
       .then(function(dbDogs) {
+        console.log(dbDogs);
         res.json(dbDogs);
       });
   });

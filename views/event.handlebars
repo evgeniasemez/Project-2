@@ -1,0 +1,59 @@
+<!--header for the page-->
+<div class="jumbotron" id="jumbo">
+  <img title="Sniffer" id="logo" class="image" src="images/sniffer.png" alt="Sniffer">
+</div>
+<div class="container-fluid">
+  <div class="row" id="dogInfo">
+    <div class="col-lg-8">
+      <div class="card dogList">
+        <div class="card-header">
+          <h3>Dog Park Party</h3>
+        </div>
+        <!--<div class="col-lg-8">-->
+        <form>
+          <!--get the Party name-->
+          <div class="form-group">
+            <label for="name-input">Event Name</label>
+            <input type="text" class="form-control" id="party-input" placeholder="Party name" />
+          </div>
+          <!--get the Location-->
+          <div class="form-group">
+            <label for="destination-input">Location</label>
+            <input type="text" class="form-control" id="location-input" placeholder="Location" />
+          </div>
+          <div class="form-group">
+            <!-- Date input -->
+            <label class="control-label" for="date">Date</label>
+            <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" />
+          </div>
+          <!--<div class="container dogButtonContainer">-->
+          <div class="dogButtonContainer">
+            <button type="button" class="btn btn-primary addDog">Update</button>
+          </div>
+        </form>
+        <!--</div>-->
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <img title="cute_dog4" class="image cuteDog4" src="/images/cute-dogs4.jpg" alt="Cute Dog">
+    </div>
+  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--<script>
+  $(document).ready(function () {
+    var date_input = $('input[name="date"]'); //our date input has the name "date"
+    var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+    var options = {
+      format: 'mm/dd/yyyy',
+      container: container,
+      todayHighlight: true,
+      autoclose: true,
+    };
+    date_input.datepicker(options);
+  })
+</script>-->
