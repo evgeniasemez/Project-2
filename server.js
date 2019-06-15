@@ -2,39 +2,8 @@ require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
 var passport = require("passport");
-var Strategy = require("passport-local").Strategy;
-var flash = require("connect-flash");
-
-passport.use(
-  new Strategy(function(username, password, cb) {
-    // we don't have this yet
-    // db.users.findByUsername(username, function(err, user) {
-    // if (err) {
-    //   return cb(err);
-    // }
-    // if (!user) {
-    //   return cb(null, false);
-    // }
-    // if (user.password !== password) {
-
-    return cb(null, false, { message: "Incorrect password." });
-    // }
-    // return cb(null, user);
-    // });
-  })
-);
-passport.serializeUser(function(user, cb) {
-  cb(null, user.id);
-});
-
-passport.deserializeUser(function(id, cb) {
-  db.users.findById(id, function(err, user) {
-    if (err) {
-      return cb(err);
-    }
-    cb(null, user);
-  });
-});
+var LocalStrategy = require("passport-local").Strategy;
+var sha256 = require("js-sha256");
 
 // Initialize Passport and restore authentication state, if any, from the
 // session.
@@ -44,10 +13,6 @@ var db = require("./models");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-app.use(passport.initialize());
-app.use(passport.session());
-
-app.use(flash());
 app.use(require("cookie-parser")());
 app.use(require("body-parser").urlencoded({ extended: true }));
 app.use(
@@ -57,7 +22,8 @@ app.use(
     saveUninitialized: false
   })
 );
-
+app.use(passport.initialize());
+app.use(passport.session());
 // app.get("/", function(req, res) {
 //   // Get an array of flash messages by passing the key to req.flash()
 //   res.render("index", { messages: req.flash("info") });
@@ -99,5 +65,45 @@ db.sequelize.sync(syncOptions).then(function() {
     );
   });
 });
+
+passport.serializeUser(function(user, cb) {
+  cb(null, user.id);
+});
+
+passport.deserializeUser(function(id, cb) {
+  db.owners
+    .findOne({
+      where: {
+        id: id
+      }
+    })
+    .then(function(user) {
+      var err = null;
+      cb(err, user);
+    });
+});
+
+passport.use(
+  new LocalStrategy(function(username, password, done) {
+    console.log(username + " " + password);
+
+    db.owners
+      .findOne({
+        where: {
+          username: username
+        }
+      })
+      .then(function(user) {
+        if (!user) {
+          return done(null, false);
+        }
+
+        if (user.password !== sha256(password)) {
+          return done(null, false);
+        }
+        return done(null, user);
+      });
+  })
+);
 
 module.exports = app;
