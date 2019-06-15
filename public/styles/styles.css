@@ -1,10 +1,10 @@
 .list-group-item {
   line-height: 2.5;
 }
-/**{
+*{
     border-radius: 5px;
     border: 1px solid blue
-}*/
+}
 #jumbo{
   height:20vh;
   padding-top:0px;
@@ -40,11 +40,12 @@
   height: 19vh;
 }
 .links{
-  position: relative;
-  top:-7vh; 
-  width:15vw;
-  height:4vh;
-  left:79.5vw;
+  position: absolute;
+  top: 5vh; 
+  /* width:15vw; */
+  /* height:4vh; */
+  /* left:79.5vw; */
+  right: 41px;
 }
 .boneButton{
   position: relative;
@@ -68,10 +69,10 @@
 #mission{
   position: relative;
   left: 10vw;
-  top: 30vh;
+  top: 16vh;
   z-index:3;
   background-color: #F6F7F8;
-  height:35vh;
+  /* height:45vh; */
   width:35vw;
 }
 #user{
@@ -123,4 +124,42 @@
 }
 .developerBtn{
   border-radius: 5px;
+}
+
+.dogList{
+  position: relative;
+  top:6vh;
+  left:9vw;
+  height:50vh;
+  width:48vw;
+}
+.cuteDog5{
+  position: relative;
+  top:9vh;
+  height:40vh;
+}
+#dogInfo{
+  background: url(../images/dogData.jpg) no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height:80vh;
+  width:100vw;
+  margin-top:20vh;
+}
+.dogButtonContainer{
+  width:5vw;
+  margin-right: 2.5vw;    
+  float:right;
+}
+.cuteDog4{
+  position: relative;
+  top:9vh;
+  height:40vh;
+  width:27vw;
+}
+#datepicker{
+  width:100px;
+  height:100px;
 }

@@ -11,7 +11,8 @@
     "database": "sniffer_db",
     "host": "localhost",
     "dialect": "mysql",
-    "logging": false
+    "logging": false,
+    "password": "#H0m3rD0h"
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",

@@ -125,6 +125,7 @@
         eventLimit: true, // allow "more" link when too many events
         events: [
           {
+
             title: 'All Day Event',
             start: '2019-06-01'
           },
@@ -154,6 +155,7 @@
             end: '2019-06-12T12:30:00'
           },
           {
+
             title: 'Lunch',
             start: '2019-06-12T12:00:00'
           },
@@ -205,27 +207,34 @@
   <div class="jumbotron" style="
     background-color: #f1f1f1;" id="jumbo">
     <img title="Santos L Halper" id="logo" class="image" src="images/sniffer.png" alt="Santos L Helper">
-    <button id="submitFromHomePage" style="
-        margin-top: 10px;" class="btn btn-primary float-right">Sign In</button>
+    <!-- <button id="submitFromHomePage" style="
+        margin-top: 10px; position: absolute; right: 10px;" class="btn btn-primary">Sign In</button> -->
 
     <div class="links">
-      <a href=#user>Your Info</a>
-      <a href=#calendar>Calendar</a>
+
+      <a href="/loginscreen">Sign In</a><span> | </span>
+      <a href=#user>Your Info</a><span> | </span>
+      <a href=#calendar>Calendar</a><span> | </span>
       <a href=#footer>Team</a>
+
     </div>
   </div>
 
   <div class="row" id="home">
     <div id="homeImage">
       <div id="mission" style="
-            background-color: #f1f1f1;">
-
-        Dogs are basically social animals that enjoy the company of their peers. Socialized dogs don’t get stressed when
-        car horns honk, strange dogs bark, bicycles buzz by or crowds of people cruise past them. Sociable dogs live
-        happy, care-free lives, so how can you help your dog become better socialized? Check this website out! Dogs,
-        like people, need to practice their social skills. Spending time with other dogs will help your dog hone his
-        ability to read his friends’ body language and to communicate effectively. This website can help you with that!
-
+      background: rgba(241,241,241,0.7);
+      padding: 15px; border-radius: 20px;
+      ">
+        <div id="missionText">
+          Dogs are basically social animals that enjoy the company of their peers. Socialized dogs don’t get stressed
+          when
+          car horns honk, strange dogs bark, bicycles buzz by or crowds of people cruise past them. Sociable dogs live
+          happy, care-free lives, so how can you help your dog become better socialized? Check this website out! Dogs,
+          like people, need to practice their social skills. Spending time with other dogs will help your dog hone his
+          ability to read his friends’ body language and to communicate effectively. This website can help you with
+          that!
+        </div>
       </div>
     </div>
   </div>
@@ -239,6 +248,7 @@
         <li>{{Dog}} - {{Breed}}</li>
       </ul>
       <div class="container userButtonContainer">
+        <a href="/loadDogData/1" class="btn btn-primary">Update2</a>
         <button type="button" class="btn btn-primary addDog">Update</button>
 
       </div>
@@ -246,7 +256,9 @@
     <img title="cute_dog3" class="image cuteDog" src="./images/cute-dogs3.jpg" alt="Cute Dog">
   </div>
 
-    <!-- <div class="row" id="user">
+
+    <!--<div class="row" id="user">
+
 
         <div class="card user">
             <div class="card-header">
@@ -258,9 +270,13 @@
             </ul>
             <img title="boneEdit" class="image boneButton" src="./images/thickbone.png" alt="Bone shaped Button Edit">
         </div>
-    </div> -->
 
-  <div class="row" id="calendar"></div>
+        <img title="cute_dog3" class="image cuteDog" src="./images/cute-dogs3.jpg" alt="Cute Dog">-->
+  </div>
+  
+  <div class="row" id="calendar">
+      <a href="/loadEvents" class="btn btn-primary">Add Event</a>
+  </div>
 
   <div class="row" id="footer">
 
@@ -268,13 +284,14 @@
       <div class="card-body developerBody">
         <h5 class="card-title">Evgenia Semez</h5>
         <p class="card-text">I am a loving pet and make my human happy all the time! I have a much bigger heart than
-          you
-          can imaging!</p>
+
+          you can imaging!</p>
+
         <!--<a class="links" href="https://www.linkedin.com/in/greg-lanter-02202a34"><i class="fab fa-linkedin"></i>-->
         <a href="https://github.com/evgeniasemez/Project-2" class="btn btn-primary developerBtn" target="_blank"><i
             class="fab fa-github"></i> Git Hub</a>
-        <a href="https://linkedin.com/in/evgenia-semez-955bb074" class="btn btn-primary developerBtn"
-          target="_blank"><i class="fab fa-linkedin"></i> Linked In</a>
+        <a href="https://linkedin.com/in/evgenia-semez-955bb074" class="btn btn-primary developerBtn" target="_blank"><i
+            class="fab fa-linkedin"></i> Linked In</a>
       </div>
       <img title="Evgenia Pet" class="image developerImage" src="./images/evgeniaPet.jpg" alt="Evgenia's Pet">
     </div>
@@ -284,9 +301,9 @@
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
           card's content.</p>
         <!--<a class="links" href="https://www.linkedin.com/in/greg-lanter-02202a34"><i class="fab fa-linkedin"></i>-->
-        <a href="https://github.com/GregoryLanter" class="btn btn-primary developerBtn" target="_blank"><i
+        <a href="https://github.com/getatmeyer" class="btn btn-primary developerBtn" target="_blank"><i
             class="fab fa-github"></i> Git Hub</a>
-        <a href="https://www.linkedin.com/in/greg-lanter-02202a34" class="btn btn-primary developerBtn"
+        <a href="https://www.linkedin.com/in/nathan-meyer-7a398147/" class="btn btn-primary developerBtn"
           target="_blank"><i class="fab fa-linkedin"></i> Linked In</a>
       </div>
       <img title="Nathan Pet" class="image developerImage" src="./images/nathanPet.png" alt="Nathan's Pets">
@@ -297,9 +314,9 @@
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
           card's content.</p>
         <!--<a class="links" href="https://www.linkedin.com/in/greg-lanter-02202a34"><i class="fab fa-linkedin"></i>-->
-        <a href="https://github.com/GregoryLanter" class="btn btn-primary developerBtn" target="_blank"><i
+        <a href="https://github.com/apop08" class="btn btn-primary developerBtn" target="_blank"><i
             class="fab fa-github"></i> Git Hub</a>
-        <a href="https://www.linkedin.com/in/greg-lanter-02202a34" class="btn btn-primary developerBtn"
+        <a href="https://www.linkedin.com/in/alex-poplawski-01aa6124/" class="btn btn-primary developerBtn"
           target="_blank"><i class="fab fa-linkedin"></i> Linked In</a>
       </div>
       <img title="Alex Pet" class="image developerImage" src="./images/alexPets.jpg" alt="Alex's Pets">
@@ -307,8 +324,7 @@
     <div class="card developer">
       <div class="card-body">
         <h5 class="card-title">Greg Lanter</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-          card's content.</p>
+        <p class="card-text">I'm Kelso, a rescued pug. I am can't hear and can barely see, but I still make my family happy. </p>
         <!--<a class="links" href="https://www.linkedin.com/in/greg-lanter-02202a34"><i class="fab fa-linkedin"></i>-->
         <a href="https://github.com/GregoryLanter" class="btn btn-primary developerBtn" target="_blank"><i
             class="fab fa-github"></i> Git Hub</a>
@@ -320,11 +336,16 @@
   </div>
 
 </body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="js/dogdata.js"></script>
 <script>
   $("#submitFromHomePage").on("click", function () {
     window.location.href = "/loginscreen";
   });
 </script>
+
 <script src="./js/core.js"></script>
 <script src="./js/interaction.js"></script>
 <script src="./js/daygrid.js"></script>
