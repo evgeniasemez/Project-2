@@ -16,7 +16,7 @@ module.exports = function(app) {
     // console.log("Testing it!" + req.flash("info"));
     if (req.user) {
       console.log("do nothing");
-      res.redirect("/users/" + req.user.username);
+      res.redirect("/users/" + req.user.id);
     } else {
       // db.Example.findAll({}).then(function(dbExamples) {
       res.render("profile", {
