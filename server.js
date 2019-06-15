@@ -2,8 +2,10 @@ require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
 var passport = require("passport");
+
 var LocalStrategy = require("passport-local").Strategy;
 var sha256 = require("js-sha256");
+
 
 // Initialize Passport and restore authentication state, if any, from the
 // session.
@@ -32,7 +34,7 @@ app.use(passport.session());
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "/public")));
 
 // Handlebars
 app.engine(

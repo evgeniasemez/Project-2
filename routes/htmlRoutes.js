@@ -40,6 +40,44 @@ module.exports = function(app) {
       });
     });
   });
+  //Load owners dogs
+  app.get("/loadDogData/:id", function(req, res) {
+    console.log(req.params);
+    console.log("req - " + req);
+    console.log("res - " + res);
+    db.dogs
+      .findAll({
+        attributes: ["name", "breed"],
+        where: { ownerId: req.params.id }
+      })
+      .then(function(data) {
+        var dogArr = [];
+        for (var i = 0; i < data.length; i++) {
+          dogArr.push(data[i].dataValues);
+        }
+        var dogsObj = {
+          dogs: dogArr
+        };
+        console.log(dogsObj);
+        res.render("doginfo", dogsObj);
+      });
+  });
+  app.get("/loadEvents", function(req, res) {
+    /*console.log("req - " + req);
+    console.log("res - " + res);*/
+    db.events
+      .findAll({
+        attributes: [
+          "name",
+          "location",
+          "date"
+        ] /*,
+        where: { owner: 1 }*/
+      })
+      .then(function(data) {
+        res.render("event", data);
+      });
+  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {

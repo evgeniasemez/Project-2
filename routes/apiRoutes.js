@@ -39,11 +39,11 @@ module.exports = function(app) {
     db.dogs
       .findOne({
         where: {
-          include: [db.events],
           id: req.params.id
         }
       })
       .then(function(dbDogs) {
+        console.log(dbDogs);
         res.json(dbDogs);
       });
   });
@@ -148,4 +148,32 @@ module.exports = function(app) {
         console.log("Jane's auto-generated ID:", jane.id);
       });
   });
+  //load dog editing html
+  /*app.get("/loadDogData", function(req, res) {
+    db.findAll({
+      where: {
+        owner: req.parms.owner
+      }
+    }).then(function(result) {
+      console.log(res.json(result));
+      return res.json(result);
+    });
+  });
+  /*app.get("/api/:characters?", function(req, res) {
+    if (req.params.characters) {
+      // Display the JSON for ONLY that character.
+      // (Note how we're using the ORM here to run our searches)
+      Character.findOne({
+        where: {
+          routeName: req.params.characters
+        }
+      }).then(function(result) {
+        return res.json(result);
+      });
+    } else {
+      Character.findAll().then(function(result) {
+        return res.json(result);
+      });
+    }
+  });*/
 };
