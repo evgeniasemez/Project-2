@@ -99,12 +99,13 @@
   <div class="jumbotron" style="
     background-color: #f1f1f1;" id="jumbo">
     <img title="Santos L Halper" id="logo" class="image" src="images/sniffer.png" alt="Santos L Helper">
-    <button id="submitFromHomePage" style="
-        margin-top: 10px;" class="btn btn-primary float-right">Sign In</button>
+    <!-- <button id="submitFromHomePage" style="
+        margin-top: 10px; position: absolute; right: 10px;" class="btn btn-primary">Sign In</button> -->
 
     <div class="links">
-      <a href=#user>Your Info</a>
-      <a href=#calendar>Calendar</a>
+      <a href="/loginscreen">Sign In</a><span> | </span>
+      <a href=#user>Your Info</a><span> | </span>
+      <a href=#calendar>Calendar</a><span> | </span>
       <a href=#footer>Team</a>
     </div>
   </div>
@@ -112,14 +113,18 @@
   <div class="row" id="home">
     <div id="homeImage">
       <div id="mission" style="
-            background-color: #f1f1f1;">
-
-        Dogs are basically social animals that enjoy the company of their peers. Socialized dogs don’t get stressed when
-        car horns honk, strange dogs bark, bicycles buzz by or crowds of people cruise past them. Sociable dogs live
-        happy, care-free lives, so how can you help your dog become better socialized? Check this website out! Dogs,
-        like people, need to practice their social skills. Spending time with other dogs will help your dog hone his
-        ability to read his friends’ body language and to communicate effectively. This website can help you with that!
-
+      background: rgba(241,241,241,0.7);
+      padding: 15px; border-radius: 20px;
+      ">
+        <div id="missionText">
+          Dogs are basically social animals that enjoy the company of their peers. Socialized dogs don’t get stressed
+          when
+          car horns honk, strange dogs bark, bicycles buzz by or crowds of people cruise past them. Sociable dogs live
+          happy, care-free lives, so how can you help your dog become better socialized? Check this website out! Dogs,
+          like people, need to practice their social skills. Spending time with other dogs will help your dog hone his
+          ability to read his friends’ body language and to communicate effectively. This website can help you with
+          that!
+        </div>
       </div>
     </div>
   </div>
@@ -140,7 +145,7 @@
     <img title="cute_dog3" class="image cuteDog" src="./images/cute-dogs3.jpg" alt="Cute Dog">
   </div>
 
-    <!-- <div class="row" id="user">
+  <!-- <div class="row" id="user">
 
         <div class="card user">
             <div class="card-header">
@@ -167,8 +172,8 @@
         <!--<a class="links" href="https://www.linkedin.com/in/greg-lanter-02202a34"><i class="fab fa-linkedin"></i>-->
         <a href="https://github.com/evgeniasemez/Project-2" class="btn btn-primary developerBtn" target="_blank"><i
             class="fab fa-github"></i> Git Hub</a>
-        <a href="https://linkedin.com/in/evgenia-semez-955bb074" class="btn btn-primary developerBtn"
-          target="_blank"><i class="fab fa-linkedin"></i> Linked In</a>
+        <a href="https://linkedin.com/in/evgenia-semez-955bb074" class="btn btn-primary developerBtn" target="_blank"><i
+            class="fab fa-linkedin"></i> Linked In</a>
       </div>
       <img title="Evgenia Pet" class="image developerImage" src="./images/evgeniaPet.jpg" alt="Evgenia's Pet">
     </div>
@@ -214,11 +219,6 @@
   </div>
 
 </body>
-<script>
-  $("#submitFromHomePage").on("click", function () {
-    window.location.href = "/loginscreen";
-  });
-</script>
 <script src="./js/core.js"></script>
 <script src="./js/interaction.js"></script>
 <script src="./js/daygrid.js"></script>
