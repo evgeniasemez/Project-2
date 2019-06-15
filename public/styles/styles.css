@@ -1,10 +1,10 @@
 .list-group-item {
   line-height: 2.5;
 }
-*{
+/* *{
     border-radius: 5px;
     border: 1px solid blue
-}
+} */
 #jumbo{
   height:20vh;
   padding-top:0px;

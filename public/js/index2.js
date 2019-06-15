@@ -79,14 +79,20 @@ $("#signUpForReal").on("click", function(event) {
     alert("You must enter a username and password!");
     return;
   }
-
-  signupAPI.Signup(
-    example.username,
-    example.password,
-    example.fullname,
-    example.phonenumber,
-    example.email
-  );
+  API.login(example.username, example.password).then(function() {
+    window.location.replace("/");
+  });
+  signupAPI
+    .Signup(
+      example.username,
+      example.password,
+      example.fullname,
+      example.phonenumber,
+      example.email
+    )
+    .then(function() {
+      window.location.replace("/loginscreen");
+    });
   $username.val("");
   $password.val("");
   $fullname.val("");
@@ -161,7 +167,7 @@ var handleFormSubmit = function(event) {
     return;
   }
 
-  API.login(example.username, example.password).then(function(res) {
+  API.login(example.username, example.password).then(function() {
     window.location.replace("/");
   });
   $username.val("");
