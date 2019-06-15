@@ -1,10 +1,10 @@
 .list-group-item {
   line-height: 2.5;
 }
-*{
+/**{
     border-radius: 5px;
     border: 1px solid blue
-}
+}*/
 #jumbo{
   height:20vh;
   padding-top:0px;
@@ -73,6 +73,7 @@
   width:35vw;
 }
 #user{
+  margin-top:18vh;
   height:80vh;
   /* background-color:#D4F6F7; */
   background-color: #d8e4f1;
