@@ -108,11 +108,12 @@ module.exports = function(app) {
     "/login",
     passport.authenticate("local", {
       failureRedirect: "/",
-      successRedirect: "/",
-      failureFlash: true
+      successRedirect: "/"
     }),
     function(req, res) {
-      res.redirect("/");
+      console.log("HI");
+
+      res.redirect("/profile");
     }
   );
 
@@ -133,12 +134,12 @@ module.exports = function(app) {
   // eslint-disable-next-line no-unused-vars
   app.post("/signup", function(req, res) {
     console.log("Hello Evgenia: ", req.body);
-    var pass = sha256(req.body.password);
+    var pass = req.body.password;
     console.log(pass);
     db.owners
       .create({
         username: req.body.username,
-        password: pass,
+        password: sha256(pass),
         name: req.body.fullname,
         phone: req.body.phonenumber,
         email: req.body.email

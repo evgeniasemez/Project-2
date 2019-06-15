@@ -4,40 +4,30 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     // console.log("Testing it!" + req.flash("info"));
-
     // db.Example.findAll({}).then(function(dbExamples) {
+
     res.render("index", {
-      msg: "Welcome!",
-      // examples: dbExamples,
-      // flash: req.flash("error"),
-      message: req.flash("error")
+      user: req.user
     });
   });
   // });
 
   app.get("/loginscreen", function(req, res) {
     // console.log("Testing it!" + req.flash("info"));
-
-    // db.Example.findAll({}).then(function(dbExamples) {
-    res.render("profile", {
-      msg: "Welcome!",
-      // examples: dbExamples,
-      // flash: req.flash("error"),
-      message: req.flash("error")
-    });
-  });
-
-  // eslint-disable-next-line no-unused-vars
-  app.get("/flash", function(req, res) {
-    // Set a flash message by passing the key, followed by the value, to req.flash().
-    // req.flash("info", "Flash is back!");
-    console.log(req.flash("error"));
-    // res.render("index", {
-    //   msg: "Welcome!",
-    // examples: dbExamples,
-    //   flash: req.flash("error"),
-    //   message: "login failed"
-    // });
+    if (req.user) {
+      console.log("do nothing");
+      res.render("index", {
+        user: req.user
+        // examples: dbExamples,
+        // flash: req.flash("error"),
+      });
+    } else {
+      // db.Example.findAll({}).then(function(dbExamples) {
+      res.render("profile", {
+        // examples: dbExamples,
+        // flash: req.flash("error"),
+      });
+    }
   });
 
   // Load example page and pass in an example by id
