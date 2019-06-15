@@ -15,90 +15,89 @@
   <link href="./styles/daygrid.css" rel="stylesheet" />
   <script src="./js/core.js"></script>
   <script src="./js/interaction.js"></script>
-  <link href="./styles/daygrid.css" rel="stylesheet" />  
+  <link href="./styles/daygrid.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Quantico" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./styles/styles.css">
   <script>
 
 
-        document.addEventListener('DOMContentLoaded', function() {
-          var calendarEl = document.getElementById('calendar');
-      
-          var calendar = new FullCalendar.Calendar(calendarEl, {
-            plugins: [ 'interaction', 'dayGrid' ],
-            defaultDate: '2019-06-12',
-            editable: true,
-            eventLimit: true, // allow "more" link when too many events
-            events: [
-              {
-                title: 'All Day Event',
-                start: '2019-06-01'
-              },
-              {
-                title: 'Long Event',
-                start: '2019-06-07',
-                end: '2019-06-10'
-              },
-              {
-                groupId: 999,
-                title: 'Repeating Event',
-                start: '2019-06-09T16:00:00'
-              },
-              {
-                groupId: 999,
-                title: 'Repeating Event',
-                start: '2019-06-16T16:00:00'
-              },
-              {
-                title: 'Conference',
-                start: '2019-06-11',
-                end: '2019-06-13'
-              },
-              {
-                title: 'Meeting',
-                start: '2019-06-12T10:30:00',
-                end: '2019-06-12T12:30:00'
-              },
-              {
-                title: 'Lunch',
-                start: '2019-06-12T12:00:00'
-              },
-              {
-                title: 'Meeting',
-                start: '2019-06-12T14:30:00'
-              },
-              {
-                title: 'Happy Hour',
-                start: '2019-06-12T17:30:00'
-              },
-              {
-                title: 'Dinner',
-                start: '2019-06-12T20:00:00'
-              },
-              {
-                title: 'Birthday Party',
-                start: '2019-06-13T07:00:00'
-              },
-              {
-                title: 'Click for Google',
-                url: 'http://google.com/',
-                start: '2019-06-28'
-              }
-            ]
-          });
-      
-          calendar.render();
-        });
-      
-      </script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var calendarEl = document.getElementById('calendar');
+
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        plugins: ['interaction', 'dayGrid'],
+        defaultDate: '2019-06-12',
+        editable: true,
+        eventLimit: true, // allow "more" link when too many events
+        events: [
+          {
+            title: 'All Day Event',
+            start: '2019-06-01'
+          },
+          {
+            title: 'Long Event',
+            start: '2019-06-07',
+            end: '2019-06-10'
+          },
+          {
+            groupId: 999,
+            title: 'Repeating Event',
+            start: '2019-06-09T16:00:00'
+          },
+          {
+            groupId: 999,
+            title: 'Repeating Event',
+            start: '2019-06-16T16:00:00'
+          },
+          {
+            title: 'Conference',
+            start: '2019-06-11',
+            end: '2019-06-13'
+          },
+          {
+            title: 'Meeting',
+            start: '2019-06-12T10:30:00',
+            end: '2019-06-12T12:30:00'
+          },
+          {
+            title: 'Lunch',
+            start: '2019-06-12T12:00:00'
+          },
+          {
+            title: 'Meeting',
+            start: '2019-06-12T14:30:00'
+          },
+          {
+            title: 'Happy Hour',
+            start: '2019-06-12T17:30:00'
+          },
+          {
+            title: 'Dinner',
+            start: '2019-06-12T20:00:00'
+          },
+          {
+            title: 'Birthday Party',
+            start: '2019-06-13T07:00:00'
+          },
+          {
+            title: 'Click for Google',
+            url: 'http://google.com/',
+            start: '2019-06-28'
+          }
+        ]
+      });
+
+      calendar.render();
+    });
+
+  </script>
 </head>
 
 <body>
 
   <!--header for the page-->
   <div class="jumbotron" style="
-    background-color: #f1f1f1;
-" id="jumbo">
+    background-color: #f1f1f1;" id="jumbo">
     <img title="Santos L Halper" id="logo" class="image" src="images/sniffer.png" alt="Santos L Helper">
     <button id="submitFromHomePage" style="
         margin-top: 10px;" class="btn btn-primary float-right">Sign In</button>
@@ -108,8 +107,6 @@
       <a href=#calendar>Calendar</a>
       <a href=#footer>Team</a>
     </div>
-
-  </div>
   </div>
 
   <div class="row" id="home">
@@ -126,7 +123,6 @@
       </div>
     </div>
   </div>
-  </div>
 
   <div class="row" id="user">
     <div class="card user">
@@ -141,8 +137,10 @@
 
       </div>
     </div>
+    <img title="cute_dog3" class="image cuteDog" src="./images/cute-dogs3.jpg" alt="Cute Dog">
+  </div>
 
-    <div class="row" id="user">
+    <!-- <div class="row" id="user">
 
         <div class="card user">
             <div class="card-header">
@@ -154,23 +152,23 @@
             </ul>
             <img title="boneEdit" class="image boneButton" src="./images/thickbone.png" alt="Bone shaped Button Edit">
         </div>
-        <img title="cute_dog3" class="image cuteDog" src="./images/cute-dogs3.jpg" alt="Cute Dog">
-    </div>
+    </div> -->
 
-    <div class="row" id="calendar">
+  <div class="row" id="calendar"></div>
 
   <div class="row" id="footer">
 
     <div class="card developer">
       <div class="card-body developerBody">
         <h5 class="card-title">Evgenia Semez</h5>
-        <p class="card-text">I am a loving pet and make my human happy all the time! I have a much bigger heart than you
+        <p class="card-text">I am a loving pet and make my human happy all the time! I have a much bigger heart than
+          you
           can imaging!</p>
         <!--<a class="links" href="https://www.linkedin.com/in/greg-lanter-02202a34"><i class="fab fa-linkedin"></i>-->
         <a href="https://github.com/evgeniasemez/Project-2" class="btn btn-primary developerBtn" target="_blank"><i
             class="fab fa-github"></i> Git Hub</a>
-        <a href="https://linkedin.com/in/evgenia-semez-955bb074" class="btn btn-primary developerBtn" target="_blank"><i
-            class="fab fa-linkedin"></i> Linked In</a>
+        <a href="https://linkedin.com/in/evgenia-semez-955bb074" class="btn btn-primary developerBtn"
+          target="_blank"><i class="fab fa-linkedin"></i> Linked In</a>
       </div>
       <img title="Evgenia Pet" class="image developerImage" src="./images/evgeniaPet.jpg" alt="Evgenia's Pet">
     </div>
@@ -213,7 +211,6 @@
       </div>
       <img title="Greg Pet" class="image developerImage" src="./images/gregPet.jpg" alt="Greg's Pets">
     </div>
-  </div>
   </div>
 
 </body>
