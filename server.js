@@ -6,7 +6,7 @@ var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
 var sha256 = require("js-sha256");
 
-
+var path = require("path");
 // Initialize Passport and restore authentication state, if any, from the
 // session.
 
