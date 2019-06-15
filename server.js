@@ -4,6 +4,7 @@ var exphbs = require("express-handlebars");
 var passport = require("passport");
 var Strategy = require("passport-local").Strategy;
 var flash = require("connect-flash");
+var path = require("path");
 
 passport.use(
   new Strategy(function(username, password, cb) {
@@ -66,7 +67,7 @@ app.use(
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "/public")));
 
 // Handlebars
 app.engine(
