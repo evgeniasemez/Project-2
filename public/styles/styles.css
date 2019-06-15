@@ -16,8 +16,24 @@
   width: 100vw;
   z-index: 4;
   background-color: white;
+  border-bottom: 4px solid gray;
 }
+
 #SLH{
+
+  position: relative;
+  top: -1vh;
+  left: 7vw;
+  height: 19vh;
+}
+#logo{
+
+  position: relative;
+  top: -1vh;
+  left: 7vw;
+  height: 19vh;
+}
+#logo{
   position: relative;
   top: -1vh;
   left: 7vw;
@@ -33,6 +49,7 @@
 .boneButton{
   position: relative;
 }
+/* 2nd screen box */
 #home{
   /*position: relative;
   top:20vh;*/
@@ -54,8 +71,8 @@
   top: 30vh;
   z-index:3;
   background-color: #F6F7F8;
-  height:33vh;
-  width:33vw;
+  height:35vh;
+  width:35vw;
 }
 #user{
   height:80vh;
