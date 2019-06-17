@@ -20,7 +20,7 @@
   <link rel="stylesheet" type="text/css" href="./styles/styles.css">
   <link rel='stylesheet' type='text/css' href='fullcalendar.css' />
   <script type='text/javascript' src='jquery.js'></script>
-  <script type='text/javascript' src='fullcalendar.js'></script>
+  <!--  <script type='text/javascript' src='fullcalendar.js'></script> -->
 </head>
 
 <body onload="loadData()">
@@ -70,7 +70,7 @@
         <li id="listItemDog"></li>
       </ul>
       <div class="container userButtonContainer">
-        <a href="/loadDogData/1" class="btn btn-primary" id="loadDogPage">Add a Dog</a>
+        <a href="/loadDogData/3" class="btn btn-primary" id="loadDogPage">Add a Dog</a>
       </div>
     </div>
     <img title="cute_dog3" class="image cuteDog" src="./images/cute-dogs3.jpg" alt="Cute Dog">
@@ -81,22 +81,34 @@
   <div class="row" id="calendar">
     <a href="/loadEvents" class="btn btn-primary">Add Even</a>
   </div>
-  
+
   <div class="row" id="mapHolder">
-    <div style="display: none">
-      <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+    <div id="legendContainer">
+      <div class="row">
+        <div class="col-md-5">
+          <!-- <div id="map"> -->
+          <div class="card mapCard" style="width: 18rem;">
+            <img id="marker" src="/images/marker.png" class="card-img-top" alt="marker">
+            <div class="card-body">
+              <h5 class="card-title">Park Locator</h5>
+              <p class="card-text">Builted in a customiezed Sniffer map, Park Locator is provdied by the team for your
+                pets.
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Leash Area<img id="purpleIcon" src="/images/leash.png"></li>
+                  <li class="list-group-item">Off-Leash Area<img id="blueIcon" src="/images/off-leash.png"></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div id="map"></div>
+        </div>
+        <img id="ladywalking" src="walkingdog.png" width="464" height="310">
+        <img id="manwalking" src="walkingdog2.png" width="464" height="310">
+      </div>
     </div>
-    <div id="map"></div>
-    <div id="infowindow-content">
-      <span id="place-name" class="title"></span><br>
-      <strong>Place ID:</strong> <span id="place-id"></span><br>
-      <span id="place-address"></span>
-    </div>
-    <!--<div container>
-      </div>-->
   </div>
   <div class="row" id="footer">
-
     <div class="card developer">
       <div class="card-body developerBody">
         <h5 class="card-title">Evgenia Semez</h5>
@@ -114,7 +126,8 @@
     <div class="card developer">
       <div class="card-body">
         <h5 class="card-title">Nathan Meyer</h5>
-        <p class="card-text">I am June the best pet you can think of! I am super energetic, happy and sweet dog! And cute too!</p>
+        <p class="card-text">I am June the best pet you can think of! I am super energetic, happy and sweet dog! And
+          cute too!</p>
         <!--<a class="links" href="https://www.linkedin.com/in/greg-lanter-02202a34"><i class="fab fa-linkedin"></i>-->
         <a href="https://github.com/getatmeyer" class="btn btn-primary developerBtn" target="_blank"><i
             class="fab fa-github"></i> Git Hub</a>
@@ -167,7 +180,8 @@
 <script src="./js/daygrid.js"></script>
 <script src="./js/sniffer.js"></script>
 <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXF7d4aeywjAg_6B-Mweiy_PUttilBJ5M&libraries=places&callback=initMap" async defer></script>-->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCvOevoS_mSwOMP1b7rUFkz56N7_QQGGwA"></script>
+<script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCvOevoS_mSwOMP1b7rUFkz56N7_QQGGwA"></script>
 <script src="./js/map_js.js"></script>
 
 </html>

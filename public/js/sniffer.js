@@ -12,12 +12,15 @@ function loadData() {
     /*resDog.render("doginfo", "");*/
     var route = "/api/dogsByOwner/" + userId;
     $.ajax(route, {}).then(function (resDog) {
+      var userDog = document.getElementById("listItemDog");
       if (resDog !== null) {
         console.log(resDog);
-        var userDog = document.getElementById("listItemDog");
-        userDog.textContent = resDog.name + " - " + resDog.breed;
+        //userDog.innerHTML = "<a href=\"/loadDogData/1\" class=\"btn btn-primary liButton\" id=\"loadDogPage\"><i class=\"fas fa-pencil-alt\"></a> <button type=\"button\" class=\"btn btn-primary liButton\" id=\"edit\" data-id = \"" + resDog.id + "\"><i class=\"fas fa-pencil-alt\"></i></button>" + "<button type=\"button\" class=\"btn btn-primary liButton\" id=\"delete\"data-id = \"" + resDog.id + "\"><i class=\"far fa-trash-alt\"></i></button>" + resDog.name + " - " + resDog.breed;
+        userDog.innerHTML = "<button type=\"button\" class=\"btn btn-primary liButton\" id=\"edit\" data-id = \"" + resDog.id + "\"><i class=\"fas fa-pencil-alt\"></i></button>" + "<button type=\"button\" class=\"btn btn-primary liButton\" id=\"delete\"data-id = \"" + resDog.id + "\"><i class=\"far fa-trash-alt\"></i></button>" + resDog.name + " - " + resDog.breed;
         addButton.style.display = "none";
+        userDog.style.display = "block";
       } else {
+        userDog.style.display = "none";
         addButton.style.display = "block";
       }
     });
@@ -47,3 +50,19 @@ function loadData() {
     mapInit();
   });
 }
+$(document.body).on("click", "#delete", function (event) {
+  //$(".liButton").on("click", function(event) {
+  var route = "/api/dogs/" + $(this).attr("data-id");
+  $.ajax(route, {
+    type: "DELETE"
+  }).then(function() {
+    console.log("deleted id ", $(this).attr("data-id"));
+    // Reload the page to get the updated list
+    window.location.replace("/");
+  });
+});
+$(document.body).on("click", "#edit", function (event) {
+  //$(".liButton").on("click", function(event) {
+  //var route = "/api/dogs/" + $(this).attr("data-id");
+  window.location.replace("/loadDogData/3");
+});
