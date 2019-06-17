@@ -48,6 +48,19 @@ module.exports = function(app) {
       });
   });
 
+  app.get("/api/dogsByOwner/:owner", function(req, res) {
+    db.dogs
+      .findOne({
+        where: {
+          ownerId: req.params.owner
+        }
+      })
+      .then(function(dbDogs) {
+        console.log(dbDogs);
+        res.json(dbDogs);
+      });
+  });
+
   // Create a new example
   app.post("/api/dogs/", function(req, res) {
     db.dogs.create(req.body).then(function(dbDogs) {
