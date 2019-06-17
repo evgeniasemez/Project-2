@@ -2,10 +2,10 @@
   line-height: 2.5;
 }
 
-/* *{
+/**{
     border-radius: 5px;
     border: 1px solid blue
-} */
+}*/
 
 #jumbo{
   height:20vh;
@@ -89,6 +89,21 @@
   top:10vh;
   left:10vw;
 }
+.liButton{
+  margin-right:10px;
+  height:25px;
+  width:25px;
+}
+.fas, .far{
+  position: relative;
+  top:-6px;
+  left:-7px;
+}
+.userButtonContainer{
+  position: relative;
+  width:20%;
+  left:5px;
+}
 .cuteDog{
   position: relative;
   top:20vh;
@@ -101,20 +116,20 @@
   max-width: 900px;
   margin: 0 auto;
 }
-#map{
+/*#map{
   position: relative;
   top:5vh;
   left: vw;
   height:77%;
   width:834px;
-}
+}*/
 #mapHolder{
   height:80vh;
   background-color: pink;
   /*max-width: 900px;*/
   margin: 0 auto;
 }
-#infowindow-content {
+/*#infowindow-content {
   display: none;
 }
 #map #infowindow-content {
@@ -124,7 +139,7 @@
   position: relative;
   top:1vh;
   height:25vh;
-}
+}*/
 #footer{
   height:80vh;
   background:url(../images/footerTry1.jpg) no-repeat center center fixed;
@@ -183,7 +198,83 @@
   height:40vh;
   width:27vw;
 }
-#datepicker{
-  width:100px;
-  height:100px;
+
+#map {
+  height: 100%;
+  width: 640px;
+  position: relative;
+  left: -4vw;
+}
+
+/*html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}*/
+
+/* .map-control {
+        background-color: #3E7AB2;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 2px rgba(39, 31, 13, 0.4);
+        font-family: 'Roboto','sans-serif';
+        margin: 10px;
+        display: none;
+        } */
+
+    /* .controls:focus {
+      border-color: #4d90fe;
+    }
+*/
+    /* .title {
+      font-weight: bold;
+    } */
+
+    #infowindow-content {
+      display: none;
+    }
+
+    #map #infowindow-content {
+      display: inline;
+      
+    }
+   
+/* #blue {
+
+} */
+/* #purple {
+width: 20px;
+height: 20px;
+}
+
+#blueicon {
+width: 30px;
+height: 30px;
+} */
+/* .row {
+margin-top: 70px;
+} */
+#marker {
+border-bottom: 1px solid lightgray;
+
+}
+#blueIcon, #purpleIcon {
+padding-left: 20px;
+}
+.mapCard {
+position: relative;
+/* margin-left: 220px; */
+left: 14vw;
+}
+#legendContainer {
+padding: 30px;
+position: absolute;
+}
+#ladywalking {
+position: relative;
+left: 21vw;
+top: -11vh;
+}
+#manwalking { 
+position: relative;
+left: 20vw;
 }

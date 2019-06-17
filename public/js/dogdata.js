@@ -18,6 +18,6 @@ $("#addDog").on("click", function(event) {
       // log the data we found
       console.log(data);
       // tell the user we're adding a character with an alert window
-      alert("Adding dog...");
+      //alert("Adding dog...");
     });
 });
