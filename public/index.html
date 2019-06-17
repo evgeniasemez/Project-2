@@ -18,84 +18,12 @@
   <link href="./styles/daygrid.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Quantico" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./styles/styles.css">
-  <script>
-
-
-    document.addEventListener('DOMContentLoaded', function () {
-      var calendarEl = document.getElementById('calendar');
-
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        plugins: ['interaction', 'dayGrid'],
-        defaultDate: '2019-06-12',
-        editable: true,
-        eventLimit: true, // allow "more" link when too many events
-        events: [
-          {
-
-            title: 'All Day Event',
-            start: '2019-06-01'
-          },
-          {
-            title: 'Long Event',
-            start: '2019-06-07',
-            end: '2019-06-10'
-          },
-          {
-            groupId: 999,
-            title: 'Repeating Event',
-            start: '2019-06-09T16:00:00'
-          },
-          {
-            groupId: 999,
-            title: 'Repeating Event',
-            start: '2019-06-16T16:00:00'
-          },
-          {
-            title: 'Conference',
-            start: '2019-06-11',
-            end: '2019-06-13'
-          },
-          {
-            title: 'Meeting',
-            start: '2019-06-12T10:30:00',
-            end: '2019-06-12T12:30:00'
-          },
-          {
-
-            title: 'Lunch',
-            start: '2019-06-12T12:00:00'
-          },
-          {
-            title: 'Meeting',
-            start: '2019-06-12T14:30:00'
-          },
-          {
-            title: 'Happy Hour',
-            start: '2019-06-12T17:30:00'
-          },
-          {
-            title: 'Dinner',
-            start: '2019-06-12T20:00:00'
-          },
-          {
-            title: 'Birthday Party',
-            start: '2019-06-13T07:00:00'
-          },
-          {
-            title: 'Click for Google',
-            url: 'http://google.com/',
-            start: '2019-06-28'
-          }
-        ]
-      });
-
-      calendar.render();
-    });
-
-  </script>
+  <link rel='stylesheet' type='text/css' href='fullcalendar.css' />
+  <script type='text/javascript' src='jquery.js'></script>
+  <script type='text/javascript' src='fullcalendar.js'></script>
 </head>
 
-<body>
+<body onload="loadData()">
 
   <!--header for the page-->
   <div class="jumbotron" style="
@@ -136,40 +64,37 @@
   <div class="row" id="user">
     <div class="card user">
       <div class="card-header">
-        <h3>{{Owner Name}}</h3>
+        <h3 id="ownerName"></h3>
       </div>
       <ul>
-        <li>{{Dog}} - {{Breed}}</li>
+        <li id="listItemDog"></li>
       </ul>
       <div class="container userButtonContainer">
-        <a href="/loadDogData/1" class="btn btn-primary">Add a Dog</a>
+        <a href="/loadDogData/1" class="btn btn-primary" id="loadDogPage">Add a Dog</a>
       </div>
     </div>
     <img title="cute_dog3" class="image cuteDog" src="./images/cute-dogs3.jpg" alt="Cute Dog">
   </div>
 
+  <!--</div>-->
 
-    <!--<div class="row" id="user">
-
-
-        <div class="card user">
-            <div class="card-header">
-                <h3>Owner Name</h3>
-            </div>
-            <ul>
-                <li>Mumford Brittany Mix</li>
-                <li>Magic Lab Mix</li>
-            </ul>
-            <img title="boneEdit" class="image boneButton" src="./images/thickbone.png" alt="Bone shaped Button Edit">
-        </div>
-
-        <img title="cute_dog3" class="image cuteDog" src="./images/cute-dogs3.jpg" alt="Cute Dog">-->
+  <div class="row" id="calendar">
+    <a href="/loadEvents" class="btn btn-primary">Add Even</a>
   </div>
   
-  <div class="row" id="calendar">
-      <a href="/loadEvents" class="btn btn-primary">Add Event</a>
+  <div class="row" id="mapHolder">
+    <div style="display: none">
+      <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+    </div>
+    <div id="map"></div>
+    <div id="infowindow-content">
+      <span id="place-name" class="title"></span><br>
+      <strong>Place ID:</strong> <span id="place-id"></span><br>
+      <span id="place-address"></span>
+    </div>
+    <!--<div container>
+      </div>-->
   </div>
-
   <div class="row" id="footer">
 
     <div class="card developer">
@@ -213,7 +138,9 @@
     <div class="card developer">
       <div class="card-body">
         <h5 class="card-title">Greg Lanter</h5>
-        <p class="card-text">I'm Kelso, a rescued pug. I am can't hear and can barely see, but I still make my family happy. </p>
+        <p class="card-text">I'm Kelso, a rescued pug. I am can't hear and can barely see, but I still make my
+          family
+          happy. </p>
         <!--<a class="links" href="https://www.linkedin.com/in/greg-lanter-02202a34"><i class="fab fa-linkedin"></i>-->
         <a href="https://github.com/GregoryLanter" class="btn btn-primary developerBtn" target="_blank"><i
             class="fab fa-github"></i> Git Hub</a>
@@ -238,5 +165,9 @@
 <script src="./js/core.js"></script>
 <script src="./js/interaction.js"></script>
 <script src="./js/daygrid.js"></script>
+<script src="./js/sniffer.js"></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXF7d4aeywjAg_6B-Mweiy_PUttilBJ5M&libraries=places&callback=initMap" async defer></script>-->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCvOevoS_mSwOMP1b7rUFkz56N7_QQGGwA"></script>
+<script src="./js/map_js.js"></script>
 
 </html>

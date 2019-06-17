@@ -101,6 +101,30 @@
   max-width: 900px;
   margin: 0 auto;
 }
+#map{
+  position: relative;
+  top:5vh;
+  left: vw;
+  height:77%;
+  width:834px;
+}
+#mapHolder{
+  height:80vh;
+  background-color: pink;
+  /*max-width: 900px;*/
+  margin: 0 auto;
+}
+#infowindow-content {
+  display: none;
+}
+#map #infowindow-content {
+  display: inline;
+}
+.mapKey{
+  position: relative;
+  top:1vh;
+  height:25vh;
+}
 #footer{
   height:80vh;
   background:url(../images/footerTry1.jpg) no-repeat center center fixed;
@@ -130,7 +154,7 @@
   position: relative;
   top:6vh;
   left:9vw;
-  height:50vh;
+  height:57vh;
   width:48vw;
 }
 .cuteDog5{

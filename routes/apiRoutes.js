@@ -8,7 +8,7 @@ module.exports = function(app) {
     db.owners
       .findOne({
         where: {
-          include: [db.dogs],
+          //include: [db.dogs],
           id: req.params.id
         }
       })
