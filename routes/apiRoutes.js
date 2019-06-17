@@ -8,7 +8,7 @@ module.exports = function(app) {
     db.owners
       .findOne({
         where: {
-          include: [db.dogs],
+          //include: [db.dogs],
           id: req.params.id
         }
       })
@@ -40,6 +40,19 @@ module.exports = function(app) {
       .findOne({
         where: {
           id: req.params.id
+        }
+      })
+      .then(function(dbDogs) {
+        console.log(dbDogs);
+        res.json(dbDogs);
+      });
+  });
+
+  app.get("/api/dogsByOwner/:owner", function(req, res) {
+    db.dogs
+      .findOne({
+        where: {
+          ownerId: req.params.owner
         }
       })
       .then(function(dbDogs) {

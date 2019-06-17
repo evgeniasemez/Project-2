@@ -1,25 +1,26 @@
-$("#addDog").on("click", function (event) {
+$("#addParty").on("click", function (event) {
   event.preventDefault();
   console.log("Add Dog button");
   var now = moment(Date()).format("YYYY-MM-DD HH:MM:SS");
   // make a newCharacter obj
-  var newDog = {
+  var newEvent = {
     // name from name input
-    name: $("#name").val().trim(),
+    name: $("#party").val().trim(),
     // role from breed input
-    breed: $("#breed").val().trim(),
+    location: $("#location").val().trim(),
+    date: $("#date").val().trim(),
     createdAt: now,
     updatedAt: now,
-    ownerId: 3
+    dogId: 3
   };
   // send an AJAX POST-request with jQuery
-  $.post("/api/dogs/", newDog)
+  $.post("/api/events", newEvent)
     // on success, run this callback
     .then(function(data) {
       // log the data we found
       console.log(data);
       // tell the user we're adding a character with an alert window
-      alert("Adding dog...");
+      //alert("Adding event...");
       window.location.replace("/");
       /*$.ajax("/sniffer", {}).then(function() {
         console.log("I went Home");

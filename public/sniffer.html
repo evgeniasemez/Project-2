@@ -167,9 +167,16 @@
   <div class="row" id="calendar">
       <a href="/loadEvents" class="btn btn-primary">Add Event</a>
   </div>
+  <div class="row" id="mapHolder">
+    <div id="map"></div>
+    <div id="infowindow-content">
+              <span id="place-name" class="title"></span><br>
+              <strong>Place ID:</strong> <span id="place-id"></span><br>
+              <span id="place-address"></span>
+    </div>
+  </div>
 
   <div class="row" id="footer">
-
     <div class="card developer">
       <div class="card-body developerBody">
         <h5 class="card-title">Evgenia Semez</h5>
@@ -238,5 +245,7 @@
 <script src="./js/core.js"></script>
 <script src="./js/interaction.js"></script>
 <script src="./js/daygrid.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCvOevoS_mSwOMP1b7rUFkz56N7_QQGGwA"></script>
+<script src="../public/js/map_js.js"></script>
 
 </html>

@@ -79,4 +79,8 @@ module.exports = function(app) {
   app.get("*", function(req, res) {
     res.render("404");
   });
+  app.get("/sniffer", function(req, res) {
+    console.log("sniffer");
+    res.redirect("localhost:3000/");
+  });
 };
