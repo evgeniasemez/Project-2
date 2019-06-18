@@ -2,10 +2,10 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Load index page
-  app.get("/", function (req, res) {
+  app.get("/", function(req, res) {
     // console.log("Testing it!" + req.flash("info"));
     // db.Example.findAll({}).then(function(dbExamples) {
-      console.log(req.user);
+    console.log(req.user);
     if (req.user) {
       res.render("sniffer", {
         user: req.user.id
