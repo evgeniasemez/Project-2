@@ -91,7 +91,7 @@ $("#signUpForReal").on("click", function(event) {
       example.email
     )
     .then(function() {
-      window.location.replace("/loginscreen");
+      window.location.replace("/");
     });
   $username.val("");
   $password.val("");
