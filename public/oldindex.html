@@ -20,18 +20,17 @@
   <link rel="stylesheet" type="text/css" href="./styles/styles.css">
   <link rel='stylesheet' type='text/css' href='fullcalendar.css' />
   <script type='text/javascript' src='jquery.js'></script>
-  <script type='text/javascript' src='fullcalendar.js'></script>
-  <script src="./js/sniffer.js"></script>
+  <!--  <script type='text/javascript' src='fullcalendar.js'></script> -->
 </head>
 
-<body onload="LoadData()">
+<body onload="loadData()">
 
   <!--header for the page-->
   <div class="jumbotron" style="
     background-color: #f1f1f1;" id="jumbo">
-    <img title="Santos L Halper" id="logo" class="image" src="images/sniffer.png" alt="Santos L Helper">
-    <!--begin comment block <button id="submitFromHomePage" style="
-        margin-top: 10px; position: absolute; right: 10px;" class="btn btn-primary">Sign In</button> end comment block -->
+    <img title="Santos L Halper" id="logo" class="image" src="images/sniffffer.png" alt="Santos L Helper">
+    <!-- <button id="submitFromHomePage" style="
+        margin-top: 10px; position: absolute; right: 10px;" class="btn btn-primary">Sign In</button> -->
 
     <div class="links">
 
@@ -43,7 +42,7 @@
     </div>
   </div>
 
-  <!--<div class="row" id="home">
+  <div class="row" id="home">
     <div id="homeImage">
       <div id="mission" style="
       background: rgba(241,241,241,0.7);
@@ -60,54 +59,55 @@
         </div>
       </div>
     </div>
-  </div>-->
+  </div>
 
   <div class="row" id="user">
     <div class="card user">
       <div class="card-header">
-        <h3>{{owner}}</h3>
+        <h3 id="ownerName"></h3>
       </div>
       <ul>
-        <li id="listItemDog">{{dog}} - {{breed}}</li>
+        <li id="listItemDog"></li>
       </ul>
       <div class="container userButtonContainer">
-        <a href="/loadDogData/1" class="btn btn-primary">Add a Dog</a>
+        <a href="/loadDogData/3" class="btn btn-primary" id="loadDogPage">Add a Dog</a>
       </div>
     </div>
     <img title="cute_dog3" class="image cuteDog" src="./images/cute-dogs3.jpg" alt="Cute Dog">
   </div>
 
-
-  <!--<div class="row" id="user">
-        <div class="card user">
-            <div class="card-header">
-                <h3>Owner Name</h3>
-            </div>
-            <ul>
-                <li>Mumford Brittany Mix</li>
-                <li>Magic Lab Mix</li>
-            </ul>
-            <img title="boneEdit" class="image boneButton" src="./images/thickbone.png" alt="Bone shaped Button Edit">
-        </div>
-
-        <img title="cute_dog3" class="image cuteDog" src="./images/cute-dogs3.jpg" alt="Cute Dog">-->
-  </div>
+  <!--</div>-->
 
   <div class="row" id="calendar">
     <a href="/loadEvents" class="btn btn-primary">Add Event</a>
   </div>
+
   <div class="row" id="mapHolder">
-    <div style="display: none">
-      <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
-    </div>
-    <div id="map"></div>
-    <div id="infowindow-content">
-      <span id="place-name" class="title"></span><br>
-      <strong>Place ID:</strong> <span id="place-id"></span><br>
-      <span id="place-address"></span>
+    <div id="legendContainer">
+      <div class="row">
+        <div class="col-md-5">
+          <!-- <div id="map"> -->
+          <div class="card mapCard" style="width: 18rem;">
+            <img id="marker" src="/images/marker.png" class="card-img-top" alt="marker">
+            <div class="card-body">
+              <h5 class="card-title">Park Locator</h5>
+              <p class="card-text">Builted in a customiezed Sniffer map, Park Locator is provdied by the team for your
+                pets.
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Leash Area<img id="purpleIcon" src="/images/leash.png"></li>
+                  <li class="list-group-item">Off-Leash Area<img id="blueIcon" src="/images/off-leash.png"></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div id="map"></div>
+        </div>
+        <img id="ladywalking" src="./images/walkingdog.png" width="464" height="310">
+        <img id="manwalking" src="./images/walkingdog2.png" width="464" height="310">
+      </div>
     </div>
   </div>
-
   <div class="row" id="footer">
     <div class="card developer">
       <div class="card-body developerBody">
@@ -126,8 +126,8 @@
     <div class="card developer">
       <div class="card-body">
         <h5 class="card-title">Nathan Meyer</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-          card's content.</p>
+        <p class="card-text">I am June the best pet you can think of! I am super energetic, happy and sweet dog! And
+          cute too!</p>
         <!--<a class="links" href="https://www.linkedin.com/in/greg-lanter-02202a34"><i class="fab fa-linkedin"></i>-->
         <a href="https://github.com/getatmeyer" class="btn btn-primary developerBtn" target="_blank"><i
             class="fab fa-github"></i> Git Hub</a>
@@ -139,8 +139,7 @@
     <div class="card developer">
       <div class="card-body">
         <h5 class="card-title">Alex Poplawski</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-          card's content.</p>
+        <p class="card-text">We are Cooper and Belle we love running free and going swimming!</p>
         <!--<a class="links" href="https://www.linkedin.com/in/greg-lanter-02202a34"><i class="fab fa-linkedin"></i>-->
         <a href="https://github.com/apop08" class="btn btn-primary developerBtn" target="_blank"><i
             class="fab fa-github"></i> Git Hub</a>
@@ -152,7 +151,8 @@
     <div class="card developer">
       <div class="card-body">
         <h5 class="card-title">Greg Lanter</h5>
-        <p class="card-text">I'm Kelso, a rescued pug. I am can't hear and can barely see, but I still make my family
+        <p class="card-text">I'm Kelso, a rescued pug. I am can't hear and can barely see, but I still make my
+          family
           happy. </p>
         <!--<a class="links" href="https://www.linkedin.com/in/greg-lanter-02202a34"><i class="fab fa-linkedin"></i>-->
         <a href="https://github.com/GregoryLanter" class="btn btn-primary developerBtn" target="_blank"><i
@@ -171,7 +171,7 @@
 <script src="js/dogdata.js"></script>
 <script>
   $("#submitFromHomePage").on("click", function () {
-    window.location.href = "/loginscreen";
+    window.location.href = "/";
   });
 </script>
 
@@ -179,6 +179,7 @@
 <script src="./js/interaction.js"></script>
 <script src="./js/daygrid.js"></script>
 <script src="./js/sniffer.js"></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXF7d4aeywjAg_6B-Mweiy_PUttilBJ5M&libraries=places&callback=initMap" async defer></script>-->
 <script type="text/javascript"
   src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCvOevoS_mSwOMP1b7rUFkz56N7_QQGGwA"></script>
 <script src="./js/map_js.js"></script>
