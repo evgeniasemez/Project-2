@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
         }
       }
     },
-    { timestamps: false }
+    //{ timestamps: false }
   );
 
   dogs.associate = function(models) {
