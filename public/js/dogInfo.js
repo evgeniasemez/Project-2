@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 var dogItem = document.getElementById("dogList");
 $("#addDog").on("click", function(event) {
   event.preventDefault();
