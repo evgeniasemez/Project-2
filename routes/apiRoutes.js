@@ -121,12 +121,12 @@ module.exports = function(app) {
     "/login",
     passport.authenticate("local", {
       failureRedirect: "/",
-      successRedirect: "/owner"
+      successRedirect: "/landing.html"
     }),
     function(req, res) {
       console.log("HI");
 
-      res.redirect("/owner");
+      res.redirect("/landing.html");
     }
   );
 
@@ -139,7 +139,7 @@ module.exports = function(app) {
     "/owner",
     require("connect-ensure-login").ensureLoggedIn("loginscreen"),
     function(req, res) {
-      res.render("owner", { user: req.user });
+      res.redirect("/landing.html");
     }
   );
 
