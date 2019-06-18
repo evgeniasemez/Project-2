@@ -149,65 +149,64 @@ function mapInit() {
   });
 
   //Marina click
-  marina.addListener("click", function () {
+  marina.addListener("click", function() {
     infowindow.close();
     infoWindow.open(map, marina);
   });
   //Discovery click
-  discovery.addListener("click", function () {
+  discovery.addListener("click", function() {
     infowindow.close();
     infoWindow1.open(map, discovery);
   });
   //Volunteer click
-  volunteer.addListener("click", function () {
+  volunteer.addListener("click", function() {
     infowindow.close();
     infoWindow2.open(map, volunteer);
   });
   //Golden Gardens click
-  golden.addListener("click", function () {
+  golden.addListener("click", function() {
     infowindow.close();
     infoWindow3.open(map, golden);
   });
   //Denny Park click
-  denny.addListener("click", function () {
+  denny.addListener("click", function() {
     infowindow.close();
     infoWindow4.open(map, denny);
   });
   //Kinnear Park click
-  kinnear.addListener("click", function () {
+  kinnear.addListener("click", function() {
     infowindow.close();
     infoWindow5.open(map, kinnear);
   });
   //Judkins Park click
-  judkins.addListener("click", function () {
+  judkins.addListener("click", function() {
     infowindow.close();
     infoWindow6.open(map, judkins);
   });
   //Seward Park click
-  seward.addListener("click", function () {
+  seward.addListener("click", function() {
     infowindow.close();
     infoWindow7.open(map, seward);
   });
   //Aiki Park click
-  aiki.addListener("click", function () {
+  aiki.addListener("click", function() {
     infowindow.close();
     infoWindow8.open(map, aiki);
   });
 
   //Magonlia Park click
-  magnolia.addListener("click", function () {
+  magnolia.addListener("click", function() {
     infowindow.close();
     infoWindow9.open(map, magnolia);
   });
 
   //Mangnuson Park click
-  mangunson.addListener("click", function () {
+  mangunson.addListener("click", function() {
     infowindow.close();
     infoWindow10.open(map, mangunson);
   });
 
   infowindow = new google.maps.InfoWindow();
-
 }
 
 google.maps.event.addDomListener(window, "load", mapInit);
