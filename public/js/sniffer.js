@@ -21,6 +21,24 @@ function loadData() {
         //userDog.innerHTML = "<a href=\"/loadDogData/1\" class=\"btn btn-primary liButton\" id=\"loadDogPage\"><i class=\"fas fa-pencil-alt\"></a> <button type=\"button\" class=\"btn btn-primary liButton\" id=\"edit\" data-id = \"" + resDog.id + "\"><i class=\"fas fa-pencil-alt\"></i></button>" + "<button type=\"button\" class=\"btn btn-primary liButton\" id=\"delete\"data-id = \"" + resDog.id + "\"><i class=\"far fa-trash-alt\"></i></button>" + resDog.name + " - " + resDog.breed;
         userDog.innerHTML =
           // eslint-disable-next-line quotes
+          /*'<button type="button" class="btn btn-primary liButton" id="edit" data-id = "' +
+          resDog.id +
+          // eslint-disable-next-line prettier/prettier
+          "\"><i class=\"fas fa-pencil-alt\"></i></button>" +*/
+          // eslint-disable-next-line prettier/prettier
+          "<button type=\"button\" class=\"btn btn-primary liButton\" id=\"delete\"data-id = \"" +
+          resDog.id +
+          // eslint-disable-next-line prettier/prettier
+          "\"><i class=\"far fa-trash-alt\"></i></button>" +
+          resDog.name +
+          " - " +
+          resDog.breed;
+        // replace this line that has an edit button 
+        // with a line without the edit since we 
+        // are not soing the edit
+
+        /*userDog.innerHTML =
+          // eslint-disable-next-line quotes
           '<button type="button" class="btn btn-primary liButton" id="edit" data-id = "' +
           resDog.id +
           // eslint-disable-next-line prettier/prettier
@@ -32,7 +50,7 @@ function loadData() {
           "\"><i class=\"far fa-trash-alt\"></i></button>" +
           resDog.name +
           " - " +
-          resDog.breed;
+          resDog.breed;*/
         addButton.style.display = "none";
         userDog.style.display = "block";
       } else {
