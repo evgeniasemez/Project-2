@@ -1,14 +1,20 @@
-$("#addParty").on("click", function (event) {
+$("#addParty").on("click", function(event) {
   event.preventDefault();
   console.log("Add Dog button");
   var now = moment(Date()).format("YYYY-MM-DD HH:MM:SS");
   // make a newCharacter obj
   var newEvent = {
     // name from name input
-    name: $("#party").val().trim(),
+    name: $("#party")
+      .val()
+      .trim(),
     // role from breed input
-    location: $("#location").val().trim(),
+
+    location: $("#location")
+      .val()
+      .trim(),
     date: formatMyDate(),
+
     createdAt: now,
     updatedAt: now,
     dogId: 3
@@ -24,8 +30,15 @@ $("#addParty").on("click", function (event) {
       window.location.replace("/");
     });
 });
-function formatMyDate(){
-  var dateStr = $("#datePicker").val().trim() + " " +$("#timePicker").val().trim();
+function formatMyDate() {
+  var dateStr =
+    $("#datePicker")
+      .val()
+      .trim() +
+    " " +
+    $("#timePicker")
+      .val()
+      .trim();
   console.log(moment(dateStr).format("YYYY-MM-DD HH:MM:SS"));
   return dateStr;
 }

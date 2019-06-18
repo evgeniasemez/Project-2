@@ -1,5 +1,5 @@
 var dogItem = document.getElementById("dogList");
-$("#addDog").on("click", function (event) {
+$("#addDog").on("click", function(event) {
   event.preventDefault();
   if (dogItem.innerText === "") {
     console.log("Add Dog button");
@@ -7,9 +7,13 @@ $("#addDog").on("click", function (event) {
     // make a newCharacter obj
     var newDog = {
       // name from name input
-      name: $("#name").val().trim(),
+      name: $("#name")
+        .val()
+        .trim(),
       // role from breed input
-      breed: $("#breed").val().trim(),
+      breed: $("#breed")
+        .val()
+        .trim(),
       createdAt: now,
       updatedAt: now,
       ownerId: 3
@@ -22,13 +26,11 @@ $("#addDog").on("click", function (event) {
         console.log(data);
         window.location.replace("/");
       });
-  }else{
-
   }
 });
 document.addEventListener(
   "DOMContentLoaded",
-  function () {
+  function() {
     var dogText = dogItem.innerText;
     var dogName = dogText.substr(0, dogText.indexOf(" "));
     var nameField = document.getElementById("name");
