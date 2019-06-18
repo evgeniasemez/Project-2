@@ -3,7 +3,7 @@ var passport = require("passport");
 var sha256 = require("js-sha256");
 
 module.exports = function(app) {
-  // Get all examples
+  // Get owner by ID
   app.get("/api/owners/:id", function(req, res) {
     db.owners
       .findOne({
@@ -17,14 +17,14 @@ module.exports = function(app) {
       });
   });
 
-  // Create a new example
+  // Create a new owner
   app.post("/api/owners", function(req, res) {
     db.owners.create(req.body).then(function(dbOwner) {
       res.json(dbOwner);
     });
   });
 
-  // Delete an example by id
+  // Delete an owner by id
   app.delete("/api/owners/:id", function(req, res) {
     db.owners
       .destroy({
@@ -35,6 +35,7 @@ module.exports = function(app) {
       });
   });
 
+  // Get dog by ID
   app.get("/api/dogs/:id", function(req, res) {
     db.dogs
       .findOne({
@@ -48,6 +49,7 @@ module.exports = function(app) {
       });
   });
 
+  // Get any dog for the given owner
   app.get("/api/dogsByOwner/:owner", function(req, res) {
     db.dogs
       .findOne({
@@ -61,14 +63,14 @@ module.exports = function(app) {
       });
   });
 
-  // Create a new example
+  // Create a new dog
   app.post("/api/dogs/", function(req, res) {
     db.dogs.create(req.body).then(function(dbDogs) {
       res.json(dbDogs);
     });
   });
 
-  // Delete an example by id
+  // Delete an dog by id
   app.delete("/api/dogs/:id", function(req, res) {
     db.dogs
       .destroy({
