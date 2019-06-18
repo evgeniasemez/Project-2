@@ -2,26 +2,56 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Sniffer</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
-  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <link href="/styles/core.css" rel="stylesheet" />
+  <link href="/styles/daygrid.css" rel="stylesheet" />
+  <script src="/js/core.js"></script>
+  <script src="/js/interaction.js"></script>
+  <link href="/styles/daygrid.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Quantico" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+  <link rel='stylesheet' type='text/css' href='fullcalendar.css' />
+  <script type='text/javascript' src='jquery.js'></script>
   
   <title>Home Page</title>
 </head>
 
 
-<body style = "background-color: #d8e4f1">
-  <img title="signUpBackgroundImage" id ="signUpBackgroundID" class="center" src="/images/puppiesSignUp.png" alt="looks amazing" style="
+<body style = "background-color: #d8e4f1" onload="loadData()">
+  {{!-- <img title="signUpBackgroundImage" id ="signUpBackgroundID" class="center" src="/images/puppiesSignUp.png" alt="looks amazing" style="
     position: absolute;
     margin-top: 160px;
     display: block;
     margin-right: auto;
     margin-left: 300px;
-">
+"> --}}
   {{{body}}}
 </body>
 
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="js/dogdata.js"></script>
+<script>
+  $("#submitFromHomePage").on("click", function () {
+    window.location.href = "/loginscreen";
+  });
+</script>
+
+<script src="/js/core.js"></script>
+<script src="/js/interaction.js"></script>
+<script src="/js/daygrid.js"></script>
+<script src="/js/sniffer.js"></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXF7d4aeywjAg_6B-Mweiy_PUttilBJ5M&libraries=places&callback=initMap" async defer></script>-->
+<script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCvOevoS_mSwOMP1b7rUFkz56N7_QQGGwA"></script>
+<script src="/js/map_js.js"></script>
 </html>
