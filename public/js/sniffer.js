@@ -3,7 +3,9 @@ var userId = 0;
 // eslint-disable-next-line no-unused-vars
 function loadData() {
   //debugger;
-  $.ajax("/api/owners/3", {}).then(function(resOwner) {
+  userId = parseInt($("#resu").text());
+  var route = "/api/owners/" + userId;
+  $.ajax(route, {}).then(function(resOwner) {
     console.log("load User");
     console.log(resOwner);
     var addButton = document.getElementById("loadDogPage");

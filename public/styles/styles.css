@@ -54,7 +54,7 @@
 #home{
   /*position: relative;
   top:20vh;*/
-  margin-top:18vh;
+  margin-top:16vh;
   height:80vh;
 }
 #homeImage{
@@ -76,7 +76,6 @@
   width:35vw;
 }
 #user{
-  margin-top:18vh;
   height:80vh;
   /* background-color:#D4F6F7; */
   background-color: #d8e4f1;
@@ -125,7 +124,7 @@
   width:834px;
 }*/
 #mapHolder{
-  height:120vh;
+  height:141vh;
   background-color: lightslategray;
   /*max-width: 900px;*/
   margin: 0 auto;

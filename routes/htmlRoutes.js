@@ -2,15 +2,18 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Load index page
-  app.get("/", function(req, res) {
+  app.get("/", function (req, res) {
     // console.log("Testing it!" + req.flash("info"));
     // db.Example.findAll({}).then(function(dbExamples) {
-
-    res.render("index", {
-      user: req.user
-    });
+      console.log(req.user);
+    if (req.user) {
+      res.render("sniffer", {
+        user: req.user.id
+      });
+    } else {
+      res.render("profile");
+    }
   });
-  // });
 
   app.get("/loginscreen", function(req, res) {
     // console.log("Testing it!" + req.flash("info"));
