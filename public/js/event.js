@@ -9,8 +9,6 @@ $("#addParty").on("click", function(event) {
       .val()
       .trim(),
     // role from breed input
-
-
     location: $("#location")
       .val()
       .trim(),
