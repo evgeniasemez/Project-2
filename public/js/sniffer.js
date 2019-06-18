@@ -1,9 +1,10 @@
 var userId = 0;
-
+var dogId = 0;
 // eslint-disable-next-line no-unused-vars
 function loadData() {
-  //debugger;
+  debugger;
   userId = parseInt($("#resu").text());
+  localStorage.setItem("user", userId);
   var route = "/api/owners/" + userId;
   $.ajax(route, {}).then(function(resOwner) {
     console.log("load User");
@@ -18,13 +19,26 @@ function loadData() {
       var userDog = document.getElementById("listItemDog");
       if (resDog !== null) {
         console.log(resDog);
+        dogId = resDog.id;
+        localStorage.setItem("dog", dogId);
         //userDog.innerHTML = "<a href=\"/loadDogData/1\" class=\"btn btn-primary liButton\" id=\"loadDogPage\"><i class=\"fas fa-pencil-alt\"></a> <button type=\"button\" class=\"btn btn-primary liButton\" id=\"edit\" data-id = \"" + resDog.id + "\"><i class=\"fas fa-pencil-alt\"></i></button>" + "<button type=\"button\" class=\"btn btn-primary liButton\" id=\"delete\"data-id = \"" + resDog.id + "\"><i class=\"far fa-trash-alt\"></i></button>" + resDog.name + " - " + resDog.breed;
-        userDog.innerHTML =
+        /*userDog.innerHTML =
           // eslint-disable-next-line quotes
           '<button type="button" class="btn btn-primary liButton" id="edit" data-id = "' +
           resDog.id +
           // eslint-disable-next-line prettier/prettier
-          "\"><i class=\"fas fa-pencil-alt\"></i></button>" +
+          "\"> <i class=\"fas fa-pencil-alt\"></i></button>" +
+          // eslint-disable-next-line prettier/prettier
+          "<button type=\"button\" class=\"btn btn-primary liButton\" id=\"delete\"data-id = \"" +
+          resDog.id +
+          // eslint-disable-next-line prettier/prettier
+          "\"><i class=\"far fa-trash-alt\"></i></button>" +
+          resDog.name +
+          " - " +
+          resDog.breed;*/
+        //since we do not ave updates we do not need the pencil button
+        userDog.innerHTML =
+          // eslint-disable-next-line quotes
           // eslint-disable-next-line prettier/prettier
           "<button type=\"button\" class=\"btn btn-primary liButton\" id=\"delete\"data-id = \"" +
           resDog.id +
@@ -80,5 +94,6 @@ $(document.body).on("click", "#delete", function() {
 $(document.body).on("click", "#edit", function() {
   //$(".liButton").on("click", function(event) {
   //var route = "/api/dogs/" + $(this).attr("data-id");
-  window.location.replace("/loadDogData/3");
+  var route = "/loadDogData/" + parseInt(localStorage.getId("dog"));
+  window.location.replace(route);
 });

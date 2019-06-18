@@ -13,7 +13,7 @@ $("#addDog").on("click", function(event) {
       .trim(),
     createdAt: moment.format("YYYY-MM-DD HH:MM:SS"),
     updatedAt: moment.format("YYYY-MM-DD HH:MM:SS"),
-    ownerId: 3
+    ownerId: parseInt(localStorage.getItem("user"))
   };
   // send an AJAX POST-request with jQuery
   $.post("/api/dogs/", newDog)

@@ -16,7 +16,7 @@ $("#addParty").on("click", function(event) {
 
     createdAt: now,
     updatedAt: now,
-    dogId: 3
+    dogId: parseInt(localStorage.getItem("dog"))
   };
   // send an AJAX POST-request with jQuery
   $.post("/api/events", newEvent)

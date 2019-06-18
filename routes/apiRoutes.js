@@ -65,6 +65,9 @@ module.exports = function(app) {
 
   // Create a new dog
   app.post("/api/dogs/", function(req, res) {
+    console.log("begin");
+    console.log(req.body);
+    console.log("end");
     db.dogs.create(req.body).then(function(dbDogs) {
       res.json(dbDogs);
     });

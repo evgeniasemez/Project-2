@@ -16,7 +16,7 @@ $("#addDog").on("click", function(event) {
       .trim(),
     createdAt: now,
     updatedAt: now,
-    ownerId: 3
+    ownerId: parseInt(localStorage.getItem("user"))
   };
   // send an AJAX POST-request with jQuery
   $.post("/api/dogs/", newDog)
@@ -25,14 +25,14 @@ $("#addDog").on("click", function(event) {
       // log the data we found
       console.log(data);
       // tell the user we're adding a character with an alert window
-      alert("Adding dog...");
+      console.log("Adding dog...");
       window.location.replace("/");
       /*$.ajax("/sniffer", {}).then(function() {
         console.log("I went Home");
       });*/
     });
 });
-document.addEventListener(
+/*document.addEventListener(
   "DOMContentLoaded",
   function() {
     var dogText = dogItem.innerText;
@@ -44,4 +44,4 @@ document.addEventListener(
     breedField.value = dogBreed;
   },
   false
-);
+);*/

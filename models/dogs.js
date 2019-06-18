@@ -7,6 +7,7 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
+
     breed: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -15,6 +16,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
+
 
   dogs.associate = function(models) {
     dogs.belongsTo(models.owners, {
