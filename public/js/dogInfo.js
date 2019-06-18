@@ -1,6 +1,7 @@
 var dogItem = document.getElementById("dogList");
 $("#addDog").on("click", function(event) {
   event.preventDefault();
+
   console.log("Add Dog button");
   var now = moment(Date()).format("YYYY-MM-DD HH:MM:SS");
   // make a newCharacter obj

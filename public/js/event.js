@@ -9,12 +9,13 @@ $("#addParty").on("click", function(event) {
       .val()
       .trim(),
     // role from breed input
+
+
     location: $("#location")
       .val()
       .trim(),
-    date: $("#date")
-      .val()
-      .trim(),
+    date: formatMyDate(),
+
     createdAt: now,
     updatedAt: now,
     dogId: 3
@@ -28,8 +29,17 @@ $("#addParty").on("click", function(event) {
       // tell the user we're adding a character with an alert window
       //alert("Adding event...");
       window.location.replace("/");
-      /*$.ajax("/sniffer", {}).then(function() {
-        console.log("I went Home");
-      });*/
     });
 });
+function formatMyDate() {
+  var dateStr =
+    $("#datePicker")
+      .val()
+      .trim() +
+    " " +
+    $("#timePicker")
+      .val()
+      .trim();
+  console.log(moment(dateStr).format("YYYY-MM-DD HH:MM:SS"));
+  return dateStr;
+}

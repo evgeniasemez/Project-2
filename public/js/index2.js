@@ -80,7 +80,7 @@ $("#signUpForReal").on("click", function(event) {
     return;
   }
   API.login(example.username, example.password).then(function() {
-    window.location.replace("/");
+    window.location.replace("/landing.html");
   });
   signupAPI
     .Signup(
