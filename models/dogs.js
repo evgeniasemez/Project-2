@@ -16,8 +16,6 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
-
-
   dogs.associate = function(models) {
     dogs.belongsTo(models.owners, {
       foreignKey: {
